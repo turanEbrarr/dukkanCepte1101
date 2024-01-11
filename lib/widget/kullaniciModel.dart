@@ -153,7 +153,7 @@ class KullaniciModel {
     SIFRE = json['SIFRE'];
     KASAKOD = json['KASAKOD'];
     ONLINE = json['ONLINE'];
-    ISLEMAKTARILSIN = json['ISLEMAKTARILSIN'];
+    ISLEMAKTARILSIN = "H";
     STOKKISIT = json['STOKKISIT'];
     CARIKISIT = json['CARIKISIT'];
     DEPOKISIT = json['DEPOKISIT'];

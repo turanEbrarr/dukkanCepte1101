@@ -127,7 +127,7 @@ class _cari_raporlari_main_pageState extends State<cari_raporlari_main_page> {
                 child: ListTile(
                   leading: Icon(Icons.account_balance),
                   title: Text(
-                    "Bakiye Raporu",
+                      "Cari Raporu",
                     style: TextStyle(color: Colors.black),
                   ),
                   trailing: Row(
@@ -147,9 +147,10 @@ class _cari_raporlari_main_pageState extends State<cari_raporlari_main_page> {
                         );
                       },
                     );
-
+/*
                     List<bool> cek = await SharedPrefsHelper.filtreCek(
                         "raporCariBakiyeFiltre");
+                        */
                     List<List<dynamic>> gelen = await bs.getirGenelRapor(
                       sirket: Ctanim.sirket!,
                       kullaniciKodu: Ctanim.kullanici!.KOD!,
@@ -179,6 +180,7 @@ class _cari_raporlari_main_pageState extends State<cari_raporlari_main_page> {
                         },
                       );
                     } else {
+                      /*
                       // gelenlerden colon kaldırıldıysa veya eklendiyse favorileri temizle
                       if(gelen[1].length!=cek.length){
                         cek.clear();
@@ -186,12 +188,13 @@ class _cari_raporlari_main_pageState extends State<cari_raporlari_main_page> {
                           cek.add(true);
                         }
                       }
+                      */
                       Navigator.pop(context);
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: ((context) => bakiye_raporu_page(
-                                gelenFiltre: cek,
+                                gelenFiltre: [],
                                 gelenBakiyeRapor: gelen,
                               )),
                         ),

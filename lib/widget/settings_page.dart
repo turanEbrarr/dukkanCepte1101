@@ -128,7 +128,7 @@ class _settings_pageState extends State<settings_page> {
                             child: Padding(
                               padding:
                                   EdgeInsets.only(left: ekranGenisligi / 3),
-                              child: Image.asset('images/opaklogo2.png'),
+                              child: Image.asset('images/dk1.png'),
                             )),
                         Container(
                           height: enable == true
@@ -239,44 +239,7 @@ class _settings_pageState extends State<settings_page> {
 
                                                         if (donenAPIler.length >
                                                             1) {
-                                                          /*
-                                                if (kayitliLisansNo != "") {
-                                                  if (kayitliLisansNo !=
-                                                      lisans.text) {
-                                                        
-                                                    DatabaseHelper dt =
-                                                        DatabaseHelper("opak" +
-                                                            lisans.text +
-                                                            ".db");
-
-                                                    Ctanim.db =
-                                                        await dt.database();
-                                                    //  showAlertDialogForLisans(context, lisans.text);
-                                                    
-                                                  } else {
-                                                    /*
-                                                    DatabaseHelper dt =
-                                                        DatabaseHelper("opak" +
-                                                            lisans.text +
-                                                            ".db");
-                                                    Ctanim.db =
-                                                        await dt.database();
-                                                        */
-                                                    String tempKulKod =
-                                                        await SharedPrefsHelper
-                                                            .kullaniciKoduGetir();
-                                                    String tempSirket =
-                                                        await SharedPrefsHelper
-                                                            .sirketGetir();
-                                                    if (tempKulKod != "" &&
-                                                        tempSirket != "") {
-                                                      kullaniciCont.text =
-                                                          tempKulKod;
-                                                      sirket.text = tempSirket;
-                                                    }
-                                                  }
-                                                } 
-                                                */
+                                              
                                                           clearAllPreferences();
                                                           await DatabaseHelper
                                                               .deleteDatabase();
@@ -328,108 +291,7 @@ class _settings_pageState extends State<settings_page> {
                                                 );
                                               });
 
-                                          /*
-                                          if (await Connectivity()
-                                                  .checkConnectivity() ==
-                                              ConnectivityResult.none) {
-                                            showAlertDialog(
-                                              context,
-                                              "İnternet bağlantısı bulunamadı.",
-                                            );
-                                          } else {
-                                         
-                                            //DB Yİ DROPLA
-                                            showDialog(
-                                              context: context,
-                                              barrierDismissible: false,
-                                              builder: (BuildContext context) {
-                                                return LoadingSpinner(
-                                                  color: Colors.blue,
-                                                  message:
-                                                      'Lisans Sorgulanıyor...',
-                                                );
-                                              },
-                                            );
-
-                                            String kullanici =
-                                                await bs.kullaniciSayisiSorgula(
-                                                    LisansNo: lisans.text);
-                                            if (kullanici == "OK") {
-                                              await SharedPrefsHelper.IpSil();
-                                              donenAPIler = await bs
-                                                  .makeSoapRequest(lisans.text);
-
-                                              Navigator.pop(context);
-
-                                              if (donenAPIler.length > 1) {
-                                            /*
-                                                if (kayitliLisansNo != "") {
-                                                  if (kayitliLisansNo !=
-                                                      lisans.text) {
-                                                        
-                                                    DatabaseHelper dt =
-                                                        DatabaseHelper("opak" +
-                                                            lisans.text +
-                                                            ".db");
-
-                                                    Ctanim.db =
-                                                        await dt.database();
-                                                    //  showAlertDialogForLisans(context, lisans.text);
-                                                    
-                                                  } else {
-                                                    /*
-                                                    DatabaseHelper dt =
-                                                        DatabaseHelper("opak" +
-                                                            lisans.text +
-                                                            ".db");
-                                                    Ctanim.db =
-                                                        await dt.database();
-                                                        */
-                                                    String tempKulKod =
-                                                        await SharedPrefsHelper
-                                                            .kullaniciKoduGetir();
-                                                    String tempSirket =
-                                                        await SharedPrefsHelper
-                                                            .sirketGetir();
-                                                    if (tempKulKod != "" &&
-                                                        tempSirket != "") {
-                                                      kullaniciCont.text =
-                                                          tempKulKod;
-                                                      sirket.text = tempSirket;
-                                                    }
-                                                  }
-                                                } 
-                                                */
-                                            await DatabaseHelper.deleteDatabase();
-                                                
-                                                  DatabaseHelper dt =
-                                                      DatabaseHelper("opak" +
-                                                          lisans.text +
-                                                          ".db");
-                                                  Ctanim.db =
-                                                      await dt.database();
-                                              
-                                                enable = true;
-                                                await SharedPrefsHelper
-                                                    .lisansNumarasiKaydet(
-                                                        lisans.text);
-                                                        // ŞİRKETLE KULLANICI KODU KAYDET
-                                                setState(() {});
-                                              } else {
-                                                showAlertDialog(
-                                                  context,
-                                                  "İp Bilgisi Alınamadı.",
-                                                );
-                                              }
-                                            } else {
-                                              showAlertDialog(
-                                                context,
-                                                ikinciGeri: true,
-                                                "Kullanıcı sayısı aşılmış. Mesaj: $kullanici",
-                                              );
-                                            }
-                                          }
-                                          */
+                                       
                                         },
                                         icon: Icon(Icons.search),
                                         color: Color.fromARGB(255, 60, 59, 59),

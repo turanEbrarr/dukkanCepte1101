@@ -3,7 +3,6 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:dukkan_cepte/tahsilat/cek_senet.dart';
 import 'package:dukkan_cepte/tahsilat/nakit_visa.dart';
 import 'package:dukkan_cepte/tahsilat/tahsilat_toplam.dart';
 import 'package:dukkan_cepte/tahsilatOdemeModel/tahsilatHaraket.dart';
@@ -66,7 +65,7 @@ class _tahsilat_tab_pageState extends State<tahsilat_tab_page> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 2,
       child: Scaffold(
         appBar: MyAppBar(height: 50, title: "Tahsilat"),
         body: Column(
@@ -98,19 +97,13 @@ class _tahsilat_tab_pageState extends State<tahsilat_tab_page> {
                   },
                   tabs: [
                     Tab(
-                      text: ("Nakit & Visa"),
+                      text: ("Nakit & Pos"),
                       icon: Icon(
                         Icons.wallet_rounded,
                         color: tab1,
                       ),
                     ),
-                    Tab(
-                      text: ("Çek Senet"),
-                      icon: Icon(
-                        Icons.payments_outlined,
-                        color: tab2,
-                      ),
-                    ),
+                   
                     Tab(
                       text: ("Toplam"),
                       icon: Icon(
@@ -128,9 +121,7 @@ class _tahsilat_tab_pageState extends State<tahsilat_tab_page> {
                   nakit_visa(
                     uid: widget.uuid,
                   ),
-                  cek_senet(
-                    uid: widget.uuid,
-                  ),
+               
                   tahsilat_toplam()
                 ],
               ),

@@ -429,11 +429,11 @@ class _MyDrawerState extends State<MyDrawer> {
                       ],
                     ),
                     SizedBox(
-                        width: ekranGenisligi / 3.5,
+                        width: ekranGenisligi / 1.5,
                         height: ekranYuksekligi / 8.5,
-                        child: Image.asset("images/opaklogo2.png")),
+                        child: Image.asset("images/dk1.png")),
                     Text(
-                      "KURUMSAL YAZILIM ÇÖZÜMLERİ",
+                      "Daima Yanınızda",
                       style: TextStyle(color: Colors.white),
                     ),
                   ],

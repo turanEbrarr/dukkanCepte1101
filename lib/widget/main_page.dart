@@ -546,7 +546,7 @@ class _MainPageState extends State<MainPage> {
             }
           },
           child: Container()),
-                       GestureDetector(
+   GestureDetector(
           onTap: () {
             if (boolController.ust.value == false) {
               int widgetListBelgeSira = 24;
@@ -555,12 +555,7 @@ class _MainPageState extends State<MainPage> {
             
             }
           },
-          child: widgetTasarim(
-              widgetBelgeSira: 23,
-              title: "Stok Etiket",
-              belgeTipi: "sa",
-              icon:   Icons.crop_sharp,
-              color: 0xFFF29638)),
+          child: Container()),
     ];
     print("abcde" + listeler.sayfaDurum.length.toString());
     for (int i = 0; i < listeler.sayfaDurum.length; i++) {

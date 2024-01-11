@@ -617,7 +617,7 @@ static dynamic noktadanSonraAlinacakParametreli(
 
   Map<int, String> MapTahsilatOdemeTip = {
     1: "Nakit",
-    2: "Visa",
+    2: "Pos",
     3: "Cek",
     4: "Senet"
   };

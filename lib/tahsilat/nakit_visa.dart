@@ -38,13 +38,14 @@ class _nakit_visaState extends State<nakit_visa> {
   final TahsilatController tahsilatEx = Get.find();
   List<KurModel> paraBirimi = [];
   List<String> kasa = ["MERKEZ-TL-KASA", ""];
-  List<BankaModel> bankalar = [];
+  List<String> bankalar = ["Deniz Bankası","İş Bankası","Ziraat Bankası"];
+  
   List<BankaSozlesmeModel> posSozlesme = [];
   DateTime dt = DateTime.now();
   var uuid = Uuid();
   KurModel? s_para_birimi;
   String? s_kasa = "MERKEZ-TL-KASA";
-  BankaModel? seciliBanka;
+  String? seciliBanka = "Deniz Bankası";
   BankaSozlesmeModel? seciliSozlesme;
   TextEditingController nakitAciklama = new TextEditingController();
   TextEditingController nakitBelgeNo = new TextEditingController();
@@ -100,22 +101,10 @@ class _nakit_visaState extends State<nakit_visa> {
     }
     }
 
-  
-    for (var element in listeler.listBankaModel) {
-      bankalar.add(element);
-    }
-    if (bankalar.isNotEmpty) {
-      seciliBanka = bankalar.first;
-    }
-    for (var element in listeler.listBankaSozlesmeModel) {
-      if (element.BANKAID == seciliBanka!.ID) {
-        posSozlesme.add(element);
-      }
-    }
-    if (posSozlesme.isNotEmpty) {
-      seciliSozlesme = posSozlesme.first;
-    }
+
+
   }
+  
 
   bool nakitTutarBosmu = true;
   bool nakitBelgeNoBosmu = true;
@@ -591,92 +580,30 @@ class _nakit_visaState extends State<nakit_visa> {
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * .6,
                                 child: DropdownButtonHideUnderline(
-                                  child: DropdownButton<BankaModel>(
+                                  child: DropdownButton<String>(
                                     value: seciliBanka,
-                                    items: bankalar.map((BankaModel banka) {
-                                      return DropdownMenuItem<BankaModel>(
+                                    items: bankalar.map((String banka) {
+                                      return DropdownMenuItem<String>(
                                         value: banka,
                                         child: Text(
-                                          banka.BANKAADI ?? "",
+                                          banka ?? "",
                                           style: TextStyle(fontSize: 14),
                                         ),
                                       );
                                     }).toList(),
-                                    onChanged: (BankaModel? selected) {
+                                    onChanged: (String? selected) {
                                       setState(() {
                                         seciliBanka = selected;
-                                        seciliSozlesme = null;
+  
+                                      });
+                                    },
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
 
-                                        posSozlesme.clear();
-                                        for (var element in listeler
-                                            .listBankaSozlesmeModel) {
-                                          if (element.BANKAID ==
-                                              seciliBanka!.ID) {
-                                            posSozlesme.add(element);
-                                          }
-                                        }
-                                        if (posSozlesme.isNotEmpty) {
-                                          seciliSozlesme = posSozlesme.first;
-                                        }
-                                      });
-                                    },
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Row(
-                            children: [
-                              SizedBox(
-                                  width: MediaQuery.of(context).size.width * .3,
-                                  child: Row(
-                                    children: [
-                                      SizedBox(
-                                        width: 80,
-                                        child: Text(
-                                          "SÖZLEŞME",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w500),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: 20,
-                                        child: Text(":"),
-                                      )
-                                    ],
-                                  )),
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width * .6,
-                                child: DropdownButtonHideUnderline(
-                                  child: DropdownButton<BankaSozlesmeModel>(
-                                    value: seciliSozlesme,
-                                    items: posSozlesme.isEmpty
-                                        ? null
-                                        : posSozlesme
-                                            .map((BankaSozlesmeModel sozlesme) {
-                                            return DropdownMenuItem<
-                                                BankaSozlesmeModel>(
-                                              value: sozlesme,
-                                              child: Text(
-                                                sozlesme.ADI ?? "",
-                                                style: TextStyle(fontSize: 14),
-                                              ),
-                                            );
-                                          }).toList(),
-                                    onChanged: (BankaSozlesmeModel? selected) {
-                                      setState(() {
-                                        seciliSozlesme = selected;
-                                      });
-                                    },
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Row(
@@ -851,14 +778,13 @@ class _nakit_visaState extends State<nakit_visa> {
                                     primary: visaBelgeNoBosMu == false &&
                                             visaTaksitBosMu == false &&
                                             visaTutarBosMu == false &&
-                                            seciliBanka != null &&
-                                            seciliSozlesme != null
+                                            seciliBanka != null 
                                         ? Colors.green
                                         : Colors.red),
                                 onPressed: () {
                                   if (visaTaksit.text != "" &&
                                       int.parse(visaTaksit.text) >= 1 &&
-                                      seciliSozlesme != null &&
+                                      
                                       visaBelgeNo.text != "" &&
                                       visaTutar.text != "") {
                                     tahsilatEx.tahsilataHareketEkle(
@@ -872,7 +798,7 @@ class _nakit_visaState extends State<nakit_visa> {
                                         belgeNo: visaBelgeNo.text,
                                         cekSeriNo: visaBelgeNo.text,
                                         doviz: anaBirim!.ACIKLAMA!,
-                                        sozlesmeId: seciliSozlesme!.ID!,
+                                        sozlesmeId: 1,
                                         taksit: int.parse(visaTaksit.text),
                                         tip: 2,
                                         tutar: double.parse(
@@ -923,7 +849,7 @@ class _nakit_visaState extends State<nakit_visa> {
                         child: ListTile(
                           leading: Icon(Icons.receipt_long_outlined),
                           title: Text(
-                            "Visa Tahsilat:",
+                            "Pos Tahsilat:",
                             style: TextStyle(
                                 fontWeight: FontWeight.w700, fontSize: 20),
                           ),

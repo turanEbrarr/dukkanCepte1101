@@ -69,7 +69,7 @@ class _odeme_detay_tab_pageState extends State<odeme_detay_tab_page> {
                   },
                   tabs: [
                     Tab(
-                      text: ("Nakit & Visa"),
+                      text: ("Nakit & Pos"),
                       icon: Icon(
                         Icons.wallet_rounded,
                         color: tab1,

@@ -602,6 +602,7 @@ class BaseService {
 
           Map<String, dynamic> kullaniciJson = parsedList[0];
           Ctanim.kullanici = KullaniciModel.fromjson(kullaniciJson);
+          
           await KullaniciModel.saveUser(Ctanim.kullanici!);
 
           return "";

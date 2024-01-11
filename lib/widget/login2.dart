@@ -558,8 +558,8 @@ class _LoginPageState extends State<LoginPage> {
                     children: [
                       SizedBox(
                           height: ekranYuksekligi / 2.2,
-                          width: ekranGenisligi / 2,
-                          child: Image.asset('images/opaklogo2.png')),
+                          width: ekranGenisligi /1,
+                          child: Image.asset('images/dk1.png')),
                       Padding(
                         padding: const EdgeInsets.only(right: 10, left: 10),
                         child: Container(

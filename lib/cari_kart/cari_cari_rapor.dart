@@ -49,15 +49,15 @@ class _cari_cari_raporState extends State<cari_cari_rapor> {
   Widget build(BuildContext context) {
     final List rapor = [
       "Cari Hesap Ektresi",
-      "Cari Alt Hesap Bakiye",
+
       //"Stoklu Cari Hesap Ekstresi",
-      "Siparişler",
+
       //"Bekleyen Siparişler",
       "Faturalar",
-      "İrsaliyeler",
+
       //"Yapılacak Tahsilatlar",
       //  "Yapılacak Ödemeler",
-      "Müşteri Çek Senet Listesi",
+   
       // "En Çok Tercih Edilen Ürünler(Satış)",
       //"En Çok Tercih Edilen Ürünler(Alış)"
     ];
