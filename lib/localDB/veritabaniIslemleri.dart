@@ -772,7 +772,7 @@ class VeriIslemleri {
     await stokGetir(); // BUNLAR AŞAĞIDA DEĞİŞRİ TEMOE BAKILIYODU ARTK BÖYLE BAKIILIRO
     await cariGetir();
     await subeDepoGetir();
-    await fisEkParamGetir();
+   // await fisEkParamGetir();
     await ondalikGetir();
 
     await plasiyerBankaGetir();

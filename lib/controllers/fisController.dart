@@ -10,6 +10,8 @@ import '../localDB/veritabaniIslemleri.dart';
 import '../widget/ctanim.dart';
 
 class FisController extends GetxController {
+
+  
   RxList<FisHareket> gecmisFisHareket = <FisHareket>[].obs;
   RxList<Fis> sonListem = <Fis>[].obs;
   Rx<Fis>? fis = Fis.empty().obs;
@@ -21,6 +23,7 @@ class FisController extends GetxController {
   RxList<Fis> list_fis_giden_tarihli = <Fis>[].obs;
   RxList<Fis> list_fis_kaydedilen_tarihli = <Fis>[].obs;
   RxDouble toplam = 0.0.obs;
+
   late DateTime fis_tarihi;
   List<FisHareket> denemelistesi = [];
 

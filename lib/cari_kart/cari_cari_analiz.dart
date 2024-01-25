@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 //au
-
+// deb
 import '../widget/cari.dart';
 //DENEYİNCE ANLARSINIZ:)
 class cari_cari_iletisim extends StatelessWidget {

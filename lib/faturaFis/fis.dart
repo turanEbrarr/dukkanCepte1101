@@ -386,7 +386,6 @@ class Fis {
     DOVIZID = int.parse(json['DOVIZID'].toString());
     ONAY = json['ONAY'];
   }
-  //database fiş ekle
   Future<int?> fisEkle({required Fis fis, required String belgeTipi}) async {
     var result;
     fis.TIP = Ctanim().MapFisTip[belgeTipi];
@@ -398,10 +397,14 @@ class Fis {
             whereArgs: [fis.ID]).then((value) => result = value);
         for (var element in fis.fisStokListesi) {
           if (element.ID! > 0) {
-            Ctanim.db?.update("TBLFISHAR", element.toJson(),
+           await Ctanim.db?.update("TBLFISHAR", element.toJson(),
                 where: "ID=?", whereArgs: [element.ID]);
           } else {
-           int gelenID =   await Ctanim.db?.insert("TBLFISHAR", element.toJson()).then((value) => element.ID = value);
+            element.ID = null;
+         await Ctanim.db?.insert("TBLFISHAR", element.toJson()).then((value) {
+           return element.ID = value;
+         });
+           print("OLAN FİŞE YENİ EKLENEN STOK ID : "+element.ID.toString());
           }
         }
         await VeriIslemleri().fiseAitEkParamTemizle(fis.ID!);

@@ -55,6 +55,21 @@ class BaseService {
       return androidDeviceInfo.id; // unique ID on Android
     }
   }
+    String temizleKontrolKarakterleri1(String metin) {
+  final kontrolKarakterleri = RegExp(r'[\x00-\x1F\x7F]');
+
+  final int chunkSize = 1024; // Metni kaç karakterlik parçalara böleceğimizi belirtiyoruz.
+  final int length = metin.length;
+  final StringBuffer result = StringBuffer();
+
+  for (int i = 0; i < length; i += chunkSize) {
+    int end = (i + chunkSize < length) ? i + chunkSize : length;
+    String chunk = metin.substring(i, end);
+    result.write(chunk.replaceAll(kontrolKarakterleri, ''));
+  }
+
+  return result.toString();
+}
 
 //webservisteki stokları getirir
   Future<String> getirStoklar({required sirket, required kullaniciKodu}) async {
@@ -87,25 +102,27 @@ class BaseService {
           await http.post(url, headers: headers, body: body);
 
       if (response.statusCode == 200) {
-        var rawXmlResponse = response.body;
-        xml.XmlDocument parsedXml = xml.XmlDocument.parse(rawXmlResponse);
-        Map<String, dynamic> jsonData = jsonDecode(parsedXml.innerText);
-        SHataModel gelenHata = SHataModel.fromJson(jsonData);
-        if (gelenHata.Hata == "true") {
-          print(gelenHata.HataMesaj);
-          return gelenHata.HataMesaj!;
-        } else {
-          String modelNode = gelenHata.HataMesaj!;
-          Iterable? l;
+        //var rawXmlResponse = response.body;
+        xml.XmlDocument parsedXml = xml.XmlDocument.parse(response.body);
+        //Map<String, dynamic> jsonData = jsonDecode(parsedXml.innerText);
+        //SHataModel gelenHata = SHataModel.fromJson(jsonData);
+      //  if (gelenHata.Hata == "true") {
+      //    print(gelenHata.HataMesaj);
+      //    return gelenHata.HataMesaj!;
+     //   } 
+      //  else {
+       
+         var jsonData = [];
           try {
-            l = json.decode(temizleKontrolKarakterleri(modelNode));
+            var tt = temizleKontrolKarakterleri1(parsedXml.innerText);
+            jsonData = json.decode(tt);
           } catch (e) {
             print(e);
           }
           List<StokKart> liststokTemp = [];
 
-          liststokTemp =
-              List<StokKart>.from(l!.map((model) => StokKart.fromJson(model)));
+        liststokTemp =
+             List<StokKart>.from(jsonData.map((model) => StokKart.fromJson(model)));
           listeler.liststok.clear();
           await VeriIslemleri().stokTabloTemizle();
 
@@ -115,7 +132,7 @@ class BaseService {
 
           await VeriIslemleri().stokGetir();
           return "";
-        }
+       // }
       } else {
         return " Stok Getirilirken İstek Oluşturulamadı. " +
             response.statusCode.toString();

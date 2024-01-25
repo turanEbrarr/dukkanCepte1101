@@ -800,8 +800,18 @@ class _genel_belge_tab_urun_araState extends State<genel_belge_tab_urun_ara> {
 
             t1.text = stokKart.guncelDegerler!.carpan.toString();
 
-            KurModel stokKartKur =
-                KurModel(ID: -1, ACIKLAMA: "-", KUR: 1, ANABIRIM: "H");
+
+
+            KurModel? stokKartKur;
+
+
+            for(var el in listeler.listKur){
+              if(el.ACIKLAMA == stokKart.SATDOVIZ){
+                stokKartKur = el;
+              }
+            }
+
+
           
             return Padding(
               padding: const EdgeInsets.only(left: 5.0, right: 5),
@@ -831,7 +841,7 @@ class _genel_belge_tab_urun_araState extends State<genel_belge_tab_urun_ara> {
                         Spacer(),
                         IconButton(
                             onPressed: () {
-                              genelBelgeBottomSheet(index, context, stokKartKur,
+                              genelBelgeBottomSheet(index, context, stokKartKur!,
                                   stokKart, miktar);
                             },
                             icon: Icon(Icons.more_vert))
@@ -956,7 +966,7 @@ class _genel_belge_tab_urun_araState extends State<genel_belge_tab_urun_ara> {
                                 padding: EdgeInsets.only(left: x * .1),
                                 child: SizedBox(
                                     width: x * .5,
-                                    child: Text(stokKartKur.ACIKLAMA ?? "-")),
+                                    child: Text(stokKartKur!.ACIKLAMA ?? "-")),
                               ),
                             ],
                           ),
@@ -1214,7 +1224,7 @@ class _genel_belge_tab_urun_araState extends State<genel_belge_tab_urun_ara> {
                                         child: Text("Sepete Ekle"),
                                         onPressed: () {
                                           sepeteEkle(
-                                              stokKart, stokKartKur, miktar);
+                                              stokKart, stokKartKur!, miktar);
                                         },
                                       )),
                                 ),
