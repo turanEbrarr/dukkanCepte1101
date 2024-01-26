@@ -499,6 +499,7 @@ class _genel_belge_tab_urun_araState extends State<genel_belge_tab_urun_ara> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          /*
                           Row(
                             children: [
                               SizedBox(
@@ -568,6 +569,7 @@ class _genel_belge_tab_urun_araState extends State<genel_belge_tab_urun_ara> {
                                   )),
                             ],
                           ),
+                          */
                           Padding(
                             padding: EdgeInsets.only(top: 9),
                             child: Row(
@@ -876,7 +878,9 @@ class _genel_belge_tab_urun_araState extends State<genel_belge_tab_urun_ara> {
                             top: y * .01,
                             left: x * .07,
                           ),
-                          child: Row(
+                          child: Container()
+                          
+                          /*Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               SizedBox(
@@ -947,6 +951,7 @@ class _genel_belge_tab_urun_araState extends State<genel_belge_tab_urun_ara> {
                               ),
                             ],
                           ),
+                          */
                         ),
                         Padding(
                           padding: EdgeInsets.only(

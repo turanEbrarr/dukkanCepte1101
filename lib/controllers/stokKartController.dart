@@ -157,7 +157,7 @@ class StokKartController extends GetxController {
               value.ADI!.toLowerCase().contains(query.toLowerCase()) ||
               value.KOD!.toLowerCase().contains(query.toLowerCase()))
           .toList();
-      searchList.assignAll(results);
+      tempList.assignAll(results);
     }
   }
 
