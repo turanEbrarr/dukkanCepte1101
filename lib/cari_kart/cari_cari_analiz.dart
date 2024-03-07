@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 // deb
 import '../widget/cari.dart';
 //DENEYİNCE ANLARSINIZ:)
+// turan deneme1
 class cari_cari_iletisim extends StatelessWidget {
   final Cari cariKart;
   const cari_cari_iletisim({super.key, required this.cariKart});
