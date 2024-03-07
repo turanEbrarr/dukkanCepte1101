@@ -603,7 +603,7 @@ class _genel_belge_tab_urun_araState extends State<genel_belge_tab_urun_ara> {
                                   width: 10,
                                 ),
                                 Text(Ctanim.noktadanSonraAlinacakParametreli(
-                                    Kmiktar!, stokKart.BAKIYE!)),
+                                    Kmiktar!, double.tryParse((stokKart.BAKIYE).toString())??0)),
                               ],
                             ),
                           ),
@@ -1023,7 +1023,7 @@ class _genel_belge_tab_urun_araState extends State<genel_belge_tab_urun_ara> {
                                           width: x * .5,
                                           child: Text(Ctanim
                                               .noktadanSonraAlinacakParametreli(
-                                                  Kmiktar!, stokKart.BAKIYE!))),
+                                    Kmiktar!, double.tryParse((stokKart.BAKIYE).toString())??0))),
                                     ),
                                   ],
                                 ),
@@ -1290,10 +1290,11 @@ class _genel_belge_tab_urun_araState extends State<genel_belge_tab_urun_ara> {
                                 stokKartKurAdi: stokKartKur.ACIKLAMA!,
                                 urunListedenMiGeldin: false,
                                 stokkart: stokKartEx.tempList[index],
+
+                                
                                 stokAdi: stokKartEx.tempList[index].ADI!,
                                 stokKodu:
                                     stokKart.guncelDegerler!.guncelBarkod!,
-                                KDVOrani: stokKartEx.tempList[index].SATIS_KDV!,
                                 cariKod: widget.cariKod.toString(),
                                 fiyat: stokKart.guncelDegerler!.fiyat!,
                                 iskonto: stokKart.guncelDegerler!.iskonto!,
@@ -1371,13 +1372,13 @@ class _genel_belge_tab_urun_araState extends State<genel_belge_tab_urun_ara> {
     });
 
     double KDVTUtarTemp =
-        stokKart.guncelDegerler!.fiyat! * (1 + (stokKart.SATIS_KDV!));
+        stokKart.guncelDegerler!.fiyat! * (1 + (18));
     {
       fisEx.fiseStokEkle(
+        KDVOrani: 18,
         belgeTipi: widget.belgeTipi,
         urunListedenMiGeldin: false,
         stokAdi: stokKart.ADI!,
-        KDVOrani: double.parse(stokKart.SATIS_KDV.toString()),
         birim: stokKart.OLCUBIRIM1!,
         birimID: birimID,
         dovizAdi: stokKartKur.ACIKLAMA!,

@@ -333,8 +333,7 @@ class _genel_belge_main_pageState extends State<genel_belge_main_page> {
                                                                               .kullanici!
                                                                               .EFATURA ==
                                                                           "E") {
-                                                                        if (fisEx.list_fis[index].cariKart.EFATURAMI ==
-                                                                            "E") {
+                                                                        if (true) { // BURADA E FATURA KONTROLU VARDI
                                                                           fisEx.list_fis[index].SERINO = Ctanim
                                                                               .kullanici!
                                                                               .EFATURASERINO!;

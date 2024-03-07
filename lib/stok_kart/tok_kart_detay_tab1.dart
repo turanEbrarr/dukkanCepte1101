@@ -123,35 +123,14 @@ class stok_kart_detay_tab1 extends StatelessWidget {
                               style: TextStyle(fontSize: 14)),
                           Text("Barkod2 : " + liststokkart1.BARKOD2.toString(),
                               style: TextStyle(fontSize: 14)),
-                          Text("Barkod3 : " + liststokkart1.BARKOD3.toString(),
-                              style: TextStyle(fontSize: 14)),
+                          
                         ],
                       ),
                     /*  SizedBox(
                         height: MediaQuery.of(context).size.height / 6,
                         width: MediaQuery.of(context).size.width /50,
                       ),*/
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                                "Barkod4 : " +
-                                    liststokkart1.BARKOD4.toString(),
-                                style: TextStyle(fontSize: 14)),
-                            Text(
-                                "Barkod5 : " +
-                                    liststokkart1.BARKOD5.toString(),
-                                style: TextStyle(fontSize: 14)),
-                            Text(
-                                "Barkod6 : " +
-                                    liststokkart1.BARKOD6.toString(),
-                                style: TextStyle(fontSize: 14)),
-                          ],
-                        ),
-                      ),
+                  
                     ]),
               ),
             ),
@@ -251,12 +230,7 @@ class stok_kart_detay_tab1 extends StatelessWidget {
                               liststokkart1.SFIYAT4.toString().substring(0,3),
                           style: TextStyle(fontSize: 14),
                         ),
-                        Text(
-                          saFiyat5 +
-                              ":   " +
-                              liststokkart1.AFIYAT5.toString().substring(0,3),
-                          style: TextStyle(fontSize: 14),
-                        ),
+                       
                         
                       ],
                     ),
@@ -280,75 +254,7 @@ class stok_kart_detay_tab1 extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height / 5,
-            decoration: BoxDecoration(
-              border: Border(
-                top: BorderSide(color: Colors.blue, width: 1),
-                bottom: BorderSide(color: Colors.blue, width: 1),
-              ),
-            ),
-            child: Card(
-              elevation: 20,
-              child: Padding(
-                padding: const EdgeInsets.all(2.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Column(crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        
-                        Text(
-                          ssAciklama1 + ":    " + liststokkart1.SACIKLAMA1
-                          .toString(),
-                          style: TextStyle(fontSize: 14),
-                        ),
-                        Text(
-                          ssAciklama3 + ":    " + liststokkart1.SACIKLAMA3.toString(),
-                          style: TextStyle(fontSize: 14),
-                        ),
-                        Text(
-                          ssAciklama5 + ":    " + liststokkart1.SACIKLAMA5.toString(),
-                          style: TextStyle(fontSize: 14),
-                        ),
-                        Text(
-                          sSatisIskonto +
-                              ":            " +
-                              liststokkart1.SATISISK
-                              .toString(),
-                          style: TextStyle(fontSize: 14),
-                        ),
-                      ],
-                    ),
-                  /*  SizedBox(
-                      height: MediaQuery.of(context).size.height / 2.5,
-                      width: MediaQuery.of(context).size.width / 6.5,
-                    ),*/
-                    Column(crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                      
-                        Text(
-                          ssAciklama2 + ":   " + liststokkart1.SACIKLAMA2.toString(),
-                          style: TextStyle(fontSize: 14),
-                        ),
-                        Text(
-                          ssAciklama4 + ":   " + liststokkart1.SACIKLAMA4.toString(),
-                          style: TextStyle(fontSize: 14),
-                        ),
-                        Text(
-                          sAlisIskonto +
-                              ":             " +
-                              liststokkart1.ALISISK.toString(),
-                          style: TextStyle(fontSize: 14),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
+     
         ],
       ),
     );

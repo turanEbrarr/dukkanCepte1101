@@ -17,7 +17,6 @@ import '../widget/ctanim.dart';
 class genel_belge_stok_kart_guncellemeDialog extends StatefulWidget {
   final String stokAdi;
   final String stokKodu;
-  final double KDVOrani;
   final StokKart stokkart;
 
   final String cariKod;
@@ -32,7 +31,7 @@ class genel_belge_stok_kart_guncellemeDialog extends StatefulWidget {
       {super.key,
       required this.stokAdi,
       required this.stokKodu,
-      required this.KDVOrani,
+   
       required this.cariKod,
       required this.fiyat,
       required this.iskonto,
@@ -171,9 +170,7 @@ class _genel_belge_stok_kart_guncellemeDialogState
     if (widget.stokkart.OLCUBIRIM2 != "") {
       birimler.add(widget.stokkart.OLCUBIRIM2!);
     }
-    if (widget.stokkart.OLCUBIRIM3 != "") {
-      birimler.add(widget.stokkart.OLCUBIRIM3!);
-    }
+  
 
     readOnly = false;
     enableDisableColor = Colors.black;
@@ -211,7 +208,7 @@ class _genel_belge_stok_kart_guncellemeDialogState
 
 
     fiyatCont.text = Ctanim.noktadanSonraAlinacakParametreli(Kfiyat!, widget.fiyat);  
-    KDVOranController.text = widget.KDVOrani.toString();
+
     isk1Controller.text = Ctanim.donusturMusteri(widget.iskonto.toString());
     isk2Controller.text = "0,00";
     List<dynamic> donenList = stokKartEx.fiyatgetir(

@@ -61,8 +61,7 @@ class CariController extends GetxController {
         return 'İnternet bağlantısı yok.';
       } else {
         String altHesapDon = await bs.getirCariAltHesap(sirket: Ctanim.sirket!);
-        String cariDon = await bs.getirCariler(
-            sirket: Ctanim.sirket!, kullaniciKodu: Ctanim.kullanici!.KOD);
+        String cariDon = await bs.getirCariler();
 
         if (cariDon == "" && altHesapDon == "") {
           return "";

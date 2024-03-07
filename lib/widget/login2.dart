@@ -316,8 +316,74 @@ class _LoginPageState extends State<LoginPage> {
           });
           await SharedPrefsHelper.saveList(listeler.sayfaDurum);
           veriislemi.veriGetir().then((value) async {
-            if (value == 0) {
-            // ÇEKİLECEK
+            if (value == 0) {              print("Veri Tabanı yok.");
+              // kontrol
+
+              const snackBar1 = SnackBar(
+                content: Text(
+                  'Yerel Hafızada Veri Kaydı Yok Veriler Ana Makineden Çekilecek',
+                  style: TextStyle(fontSize: 16),
+                ),
+                showCloseIcon: true,
+                backgroundColor: Color.fromARGB(255, 66, 82, 97),
+                closeIconColor: Colors.white,
+              );
+              ScaffoldMessenger.of(context).showSnackBar(snackBar1);
+
+              if (await Connectivity().checkConnectivity() ==
+                  ConnectivityResult.none) {
+                print("İnternet bağlantısı yok.");
+                const snackBar = SnackBar(
+                  content: Text(
+                    'İnternet bağlantısı yok. Webservisten veri çekilemedi.',
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  showCloseIcon: true,
+                  backgroundColor: Colors.blue,
+                  closeIconColor: Colors.white,
+                );
+                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+              } else {
+                String genelHata = "";
+                List<String?> hatalar = [];
+                
+                hatalar.add(await stokKartEx.servisStokGetir());
+                hatalar.add(await cariEx.servisCariGetir());
+             
+                if (hatalar.length > 0) {
+                  for (var element in hatalar) {
+                    if (element != "") {
+                      genelHata = genelHata + "\n" + element!;
+                    }
+                  }
+                }
+                if (genelHata != "") {
+                  if (paremetreHatasiVarMi == false) {
+                    LogModel log = LogModel(
+                      TABLOADI: "LOGİN İLK GİRİŞ",
+                      HATAACIKLAMA: genelHata,
+                    );
+                    await VeriIslemleri().logKayitEkle(log);
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(builder: (context) => MainPage()),
+                      (route) => false,
+                    );
+                  } else {
+                    hataGoster(
+                        mesajVarMi: true,
+                        mesaj:
+                            "Web Servisten Veri Alınırken Bazı Hatalar İle Karşılaşıldı:\n" +
+                                genelHata);
+                  }
+                } else {
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => MainPage()),
+                    (route) => false,
+                  );
+                }
+              }
             } else {
               if (Ctanim.kullanici!.ONLINE == "H") {
                 if (paremetreHatasiVarMi == true) {
@@ -660,10 +726,11 @@ class _LoginPageState extends State<LoginPage> {
                                               borderRadius: BorderRadius.all(
                                                   Radius.circular(10.0)),
                                             )),
-                                        onPressed: () {
+                                        onPressed: ()  {
                                           if (_formKey.currentState != null &&
                                               _formKey.currentState!
                                                   .validate()) {
+                                                  
                                             click();
                                           }
                                         }),

@@ -197,8 +197,7 @@ class _depo_transfer_urun_listeState extends State<depo_transfer_urun_liste> {
                                                                             fishareket.STOKADI!,
                                                                         stokKodu:
                                                                             fishareket.STOKKOD!,
-                                                                        KDVOrani:
-                                                                            stokKart.SATISISK!,
+                                                                     
                                                                         cariKod: cariEx
                                                                             .searchCariList[index]
                                                                             .KOD!,

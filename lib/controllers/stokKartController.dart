@@ -93,26 +93,9 @@ class StokKartController extends GetxController {
 
         } else if (Ctanim.kullanici!.SATISTIPI == "2") {
           double sonFiyat = 0.0;
-          if(seciliCari.FIYAT == 1){
-            sonFiyat = Stok.SFIYAT1!;
+      
 
-          }else if (seciliCari.FIYAT == 2){
-            sonFiyat = Stok.SFIYAT2!;
-
-          }else if (seciliCari.FIYAT == 3){
-            sonFiyat = Stok.SFIYAT3!;
-
-          }else if (seciliCari.FIYAT == 4){
-            sonFiyat = Stok.SFIYAT4!;
-
-          }else if (seciliCari.FIYAT == 5){
-            sonFiyat = Stok.SFIYAT5!;
-
-          }else{
-            sonFiyat = 0.0;
-          }
-
-          return [sonFiyat, seciliCari.ISKONTO, seciliCari.FIYAT, false];
+          return [sonFiyat, 0,0, false];
         } else if (Ctanim.kullanici!.SATISTIPI == "3") {
        
         }
@@ -198,7 +181,7 @@ class StokKartController extends GetxController {
         return 'Veritabanı bağlantısı başarısız.';
       } else {
         String don = await bs.getirStoklar(
-            kullaniciKodu: Ctanim.kullanici!.KOD, sirket: Ctanim.sirket!);
+            );
         return don;
       }
     }

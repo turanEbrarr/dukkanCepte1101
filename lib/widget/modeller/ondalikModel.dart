@@ -22,6 +22,29 @@ class OndalikModel {
   int? PERTUTAR;
   int? PERDOVTUTAR;
 
+  OndalikModel.empty()
+      : this(
+          SUBEID: 1,
+          FIYAT: 1,
+          MIKTAR: 1,
+          KUR: 1,
+          DOVFIYAT: 1,
+          TUTAR: 1,
+          DOVTUTAR: 1,
+          ALISFIYAT: 1,
+          ALISMIKTAR: 1,
+          ALISKUR: 1,
+          ALISDOVFIYAT: 1,
+          ALISTUTAR: 1,
+          ALISDOVTUTAR: 1,
+          PERFIYAT: 1,
+          PERMIKTAR: 1,
+          PERKUR: 1,
+          PERDOVFIYAT: 1,
+          PERTUTAR: 1,
+          PERDOVTUTAR: 1,
+       
+        );
   OndalikModel({
     this.SUBEID,
     this.FIYAT,

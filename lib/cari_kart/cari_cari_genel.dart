@@ -35,7 +35,6 @@ class _cari_cari_genelState extends State<cari_cari_genel> {
             Satir(labelText: "Vergi Dairesi: "+widget.cariKart.VERGIDAIRESI.toString()),
             Satir(labelText: "Vergi/TC No: "+widget.cariKart.VERGINO.toString()),
             Satir(labelText: "Bakiye: "+widget.cariKart.BAKIYE.toString()),
-            Satir(labelText: "E-Fatura: "+widget.cariKart.EFATURAMI.toString()),
             Satir(labelText: "E-Mail: "+widget.cariKart.EMAIL.toString()),
           ],
         ),

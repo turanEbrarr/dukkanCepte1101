@@ -33,7 +33,7 @@ enum KUSURAT {
 }
 
 class Ctanim {
-  static OndalikModel? ondalikModel;
+  static OndalikModel ondalikModel = OndalikModel.empty();
   static bool faturaTipiDegisi = false;
   static String yeniFaturaTipi = "";
   String SatisFiyatTip = "Fiyat1";
@@ -90,7 +90,7 @@ class Ctanim {
 
 static dynamic noktadanSonraAlinacakParametreli(
     KUSURAT kusurat, double veri, {bool doubleMiDonsun = false}) {
-    Ctanim.ondalikModel!.ALISDOVFIYAT;  
+
   switch (kusurat) {
     case KUSURAT.FIYAT:
       if (doubleMiDonsun == true) {

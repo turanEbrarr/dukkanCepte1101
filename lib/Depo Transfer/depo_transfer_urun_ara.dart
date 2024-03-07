@@ -163,9 +163,7 @@ class _depo_transfer_urun_araState extends State<depo_transfer_urun_ara> {
                     if (stokKart.OLCUBIRIM2 != "") {
                       dropdownItems.add(stokKart.OLCUBIRIM2!);
                     }
-                    if (stokKart.OLCUBIRIM3 != "") {
-                      dropdownItems.add(stokKart.OLCUBIRIM3!);
-                    }
+                 
                     print("S" + stokKartEx.searchList.length.toString());
                     return Padding(
                       padding: const EdgeInsets.only(left: 5.0, right: 5),
@@ -468,15 +466,14 @@ class _depo_transfer_urun_araState extends State<depo_transfer_urun_ara> {
                                                           .guncelDegerler!
                                                           .fiyat! *
                                                       (1 +
-                                                          (stokKart
-                                                              .SATIS_KDV!));
+                                                          (18));
                                                   {
                                                     fisEx.fiseStokEkle(
                                                       belgeTipi: "Depo_Transfer",
                                                       urunListedenMiGeldin: false,
                                                         stokAdi: stokKart.ADI!,
                                                         KDVOrani: double.parse(
-                                                            stokKart.SATIS_KDV
+                                                            "18"
                                                                 .toString()),
                                                         birim: pu == ""
                                                             ? stokKart

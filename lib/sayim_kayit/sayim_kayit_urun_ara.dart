@@ -245,9 +245,7 @@ class _sayim_kayit_urun_araState extends State<sayim_kayit_urun_ara> {
                     if (stokKart.OLCUBIRIM2 != "") {
                       dropdownItems.add(stokKart.OLCUBIRIM2!);
                     }
-                    if (stokKart.OLCUBIRIM3 != "") {
-                      dropdownItems.add(stokKart.OLCUBIRIM3!);
-                    }
+                 
                     print("S" + stokKartEx.tempList.length.toString());
                     return Padding(
                       padding: const EdgeInsets.only(left: 5.0, right: 5),
@@ -332,10 +330,6 @@ class _sayim_kayit_urun_araState extends State<sayim_kayit_urun_ara> {
                                                                     .tempList[
                                                                         index]
                                                                     .KOD!,
-                                                                KDVOrani: stokKartEx
-                                                                    .tempList[
-                                                                        index]
-                                                                    .SATIS_KDV!,
                                                                 cariKod: widget
                                                                     .cariKod
                                                                     .toString(),
@@ -446,10 +440,8 @@ class _sayim_kayit_urun_araState extends State<sayim_kayit_urun_ara> {
                                   setState(() {
                                     if (value == stokKart.OLCUBIRIM1) {
                                     } else if (value == stokKart.OLCUBIRIM2) {
-                                      olcuAdet = stokKart.BIRIMADET1!;
-                                    } else if (value == stokKart.OLCUBIRIM3) {
-                                      olcuAdet = stokKart.BIRIMADET2!;
-                                    }
+                                      olcuAdet = (stokKart.BIRIMADET1!).toString();
+                                    } 
                                     selectedValue = value!;
                                     pu = value;
                                   });
@@ -555,8 +547,7 @@ class _sayim_kayit_urun_araState extends State<sayim_kayit_urun_ara> {
                                                           .guncelDegerler!
                                                           .fiyat! *
                                                       (1 +
-                                                          (stokKart
-                                                              .SATIS_KDV!));
+                                                          (18));
                                                   {
                                                     fisEx.DepoaHareketEkle(
                                                       ACIKLAMA: fisEx.sayim!
@@ -641,7 +632,7 @@ class _sayim_kayit_urun_araState extends State<sayim_kayit_urun_ara> {
         }
 
         double KDVTUtarTemp = stokKartEx.tempList[0].guncelDegerler!.fiyat! *
-            (1 + (stokKartEx.tempList[0].SATIS_KDV!));
+            (1 + (18));
         {
           fisEx.DepoaHareketEkle(
             ACIKLAMA: fisEx.sayim!.value.ACIKLAMA ?? "",

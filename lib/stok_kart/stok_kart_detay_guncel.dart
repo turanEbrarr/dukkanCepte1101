@@ -152,30 +152,8 @@ class _stok_kart_detay_guncelState extends State<stok_kart_detay_guncel> {
                           Text(widget.stokKart.MARKA!),
                         ],
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 7),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("Raf: "),
-                            Text(widget.stokKart.RAF! == "" || widget.stokKart.RAF == null
-                                ? "Raf bilgisi yok"
-                                : widget.stokKart.RAF!),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 7),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("Birim: "),
-                            Text(widget.stokKart.OLCUBIRIM1! == ""
-                                ? "Adet"
-                                : widget.stokKart.OLCUBIRIM1!),
-                          ],
-                        ),
-                      ),
+                     
+                      
                     ],
                   )),
                 ),
@@ -192,40 +170,8 @@ class _stok_kart_detay_guncelState extends State<stok_kart_detay_guncel> {
                 ),
               ),
            
-              Padding(
-                padding:
-                    EdgeInsets.only(top: x * .03, left: x * .07, bottom: 5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Genel Bakiye:"),
-                    Text(widget.stokKart.BAKIYE!.toStringAsFixed(2) +" "+
-                        widget.stokKart
-                            .OLCUBIRIM1!) //BAKİYE YOK SORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
-                  ],
-                ),
-              ),
-            yerelList.length>0?  SizedBox(
-            //  width: x * .8,
-              height: yerelList.length * 40.0,
-
-              child: ListView.builder(itemCount: yerelList.length,itemBuilder: ((context, index) {
-                  return  Padding(
-                  padding:
-                      EdgeInsets.only(top: x * .03, left: x * .07, bottom: 5),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(yerelList[index].DEPOADI! + " Bakiye:"),
-                      Text(yerelList[index].BAKIYE!.toStringAsFixed(2) +" "+
-                          widget.stokKart
-                              .OLCUBIRIM1!) //BAKİYE YOK SORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
-                    ],
-                  ),
-                );
-                  
-                })),
-            ):Container(),
+              
+           
              
               Container(
                 child: Padding(
@@ -259,34 +205,7 @@ class _stok_kart_detay_guncelState extends State<stok_kart_detay_guncel> {
                           ikinciTittle: Ctanim.kullanici!.ALISFIYATGORMESIN== "H" ? "Alış Fiyat 1" : "-",
                           ilkGosterim: widget.stokKart.SFIYAT5.toString(),
                           ikinciGosterim: widget.stokKart.AFIYAT1.toString()),
-                      sutunTasarim(x,
-                          ilkTittle: Ctanim.kullanici!.ALISFIYATGORMESIN== "H" ? "Alış Fiyat 2":"-",
-                          ikinciTittle:  Ctanim.kullanici!.ALISFIYATGORMESIN== "H" ?"Alış Fiyat 3":"-",
-                          ilkGosterim: widget.stokKart.AFIYAT2.toString(),
-                          ikinciGosterim: widget.stokKart.AFIYAT3.toString()),
-                      sutunTasarim(x,
-                          ilkTittle: Ctanim.kullanici!.ALISFIYATGORMESIN== "H" ? "Alış Fiyat 4":"-",
-                          ikinciTittle: Ctanim.kullanici!.ALISFIYATGORMESIN== "H" ? "Alış Fiyat 5":"-",
-                          ilkGosterim: widget.stokKart.AFIYAT4.toString(),
-                          ikinciGosterim: widget.stokKart.AFIYAT5.toString()),
-                      sutunTasarim(x,
-                          ilkTittle: "S.Açıklama 1",
-                          ikinciTittle: "S.Açıklama 2",
-                          ilkGosterim: widget.stokKart.SACIKLAMA1.toString(),
-                          ikinciGosterim:
-                              widget.stokKart.SACIKLAMA2.toString()),
-                      sutunTasarim(x,
-                          ilkTittle: "S.Açıklama 3",
-                          ikinciTittle: "S.Açıklama 4",
-                          ilkGosterim: widget.stokKart.SACIKLAMA3.toString(),
-                          ikinciGosterim:
-                              widget.stokKart.SACIKLAMA4.toString()),
-                      sutunTasarim(x,
-                          ilkTittle: "S.Açıklama 5",
-                          ikinciTittle: "S.Açıklama 6",
-                          ilkGosterim: widget.stokKart.SACIKLAMA5.toString(),
-                          ikinciGosterim:
-                              widget.stokKart.SACIKLAMA6.toString()),
+                    
                       sutunTasarim(x,
                           ilkTittle: "Satış İSK",
                           ikinciTittle: "Alış İSK",
@@ -307,7 +226,6 @@ class _stok_kart_detay_guncelState extends State<stok_kart_detay_guncel> {
                   textAlign: TextAlign.center,
                 ),
               ),
-              sutunTasarim(x, ilkTittle: "Satış KDV",ikinciTittle: "Alış KDV",ilkGosterim: widget.stokKart.SATIS_KDV.toString(),ikinciGosterim: widget.stokKart.ALIS_KDV.toString()),
               Divider(
                 thickness: 2,
               ),
@@ -319,103 +237,11 @@ class _stok_kart_detay_guncelState extends State<stok_kart_detay_guncel> {
                   textAlign: TextAlign.center,
                 ),
               ),
-                            Padding(
-                padding:
-                    EdgeInsets.only(top: x * .03, left: x * .07, bottom: 5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Barkod 1:"),
-                      Text(widget.stokKart.BARKOD1 == ""
-                        ? "BARKOD GİRİLMEMİŞ"
-                        : widget.stokKart.BARKOD1! +
-                            "/" +
-                            widget.stokKart
-                                .BARKOD1BIRIMADI!,style: TextStyle(fontSize: 12),)  //BAKİYE YOK SORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
-                  ],
-                ),
-              ),
-                            Padding(
-                padding:
-                    EdgeInsets.only(top: x * .03, left: x * .07, bottom: 5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Barkod 2:"),
-                      Text(widget.stokKart.BARKOD2 == ""
-                        ? "BARKOD GİRİLMEMİŞ"
-                           
-                        : widget.stokKart.BARKOD2! +
-                            "/" +
-                            widget.stokKart
-                                .BARKOD2BIRIMADI!,style: TextStyle(fontSize: 12),)  //BAKİYE YOK SORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
-                  ],
-                ),
-              ),
-                            Padding(
-                padding:
-                    EdgeInsets.only(top: x * .03, left: x * .07, bottom: 5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Barkod 3:"),
-                      Text(widget.stokKart.BARKOD3 == ""
-                        ? "BARKOD GİRİLMEMİŞ"
-                        : widget.stokKart.BARKOD3! +
-                            "/" +
-                            widget.stokKart
-                                .BARKOD3BIRIMADI!,style: TextStyle(fontSize: 12),)  //BAKİYE YOK SORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
-                  ],
-                ),
-              ),
-              Padding(
-                padding:
-                    EdgeInsets.only(top: x * .03, left: x * .07, bottom: 5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Barkod 4:"),
-                      Text(widget.stokKart.BARKOD4 == ""
-                        ? "BARKOD GİRİLMEMİŞ"
-                        : widget.stokKart.BARKOD4! +
-                            "/" +
-                            widget.stokKart
-                                .BARKOD4BIRIMADI!,style: TextStyle(fontSize: 12),)  //BAKİYE YOK SORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
-                  ],
-                ),
-              ),
-              Padding(
-                padding:
-                    EdgeInsets.only(top: x * .03, left: x * .07, bottom: 5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Barkod 5:"),
-                    Text(widget.stokKart.BARKOD5 == ""
-                        ? "BARKOD GİRİLMEMİŞ"
-                        : widget.stokKart.BARKOD5! +
-                            "/" +
-                            widget.stokKart
-                                .BARKOD5BIRIMADI!,style: TextStyle(fontSize: 12),) //BAKİYE YOK SORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
-                  ],
-                ),
-              ),
-              Padding(
-                padding:
-                    EdgeInsets.only(top: x * .03, left: x * .07, bottom: 5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Barkod 6:"),
-                    Text(widget.stokKart.BARKOD6 == ""
-                        ? "BARKOD GİRİLMEMİŞ"
-                        : widget.stokKart.BARKOD6! +
-                            "/" +
-                            widget.stokKart
-                                .BARKOD6BIRIMADI!,style: TextStyle(fontSize: 12),)  //BAKİYE YOK SORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
-                  ],
-                ),
-              ),
+              
+              
+             
+            
+           
               Divider(
                 thickness: 2,
               ),

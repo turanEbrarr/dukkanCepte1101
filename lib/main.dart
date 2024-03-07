@@ -22,10 +22,10 @@ void main() async {
   */
   WidgetsFlutterBinding.ensureInitialized();
   String lisans = await SharedPrefsHelper.lisansNumarasiGetir();
-  if (lisans != "") {
-    DatabaseHelper dt = DatabaseHelper("dukkanCepte" + lisans + ".db");
+  //if (lisans != "") {
+    DatabaseHelper dt = DatabaseHelper("dukkanCepte.db");
     Ctanim.db = await dt.database();
-  }
+ // }
 
   Ctanim.yatayDikey = await SharedPrefsHelper.yatayDikeyGetir();
 

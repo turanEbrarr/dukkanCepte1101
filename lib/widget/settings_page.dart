@@ -246,10 +246,7 @@ class _settings_pageState extends State<settings_page> {
 
                                                           DatabaseHelper dt =
                                                               DatabaseHelper(
-                                                                  "dukkanCepte" +
-                                                                      lisans
-                                                                          .text +
-                                                                      ".db");
+                                                                  "dukkanCepte.db");
                                                           Ctanim.db = await dt
                                                               .database();
 

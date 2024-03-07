@@ -17,11 +17,9 @@ class cari_cari_iletisim extends StatelessWidget {
               labelText: "Adres: " + cariKart.ADRES.toString(),
               icon: Icon(Icons.map_outlined)),
           Satir(
-              labelText: "Telefon: " + cariKart.TELEFON.toString(),
+              labelText: "Telefon: " + cariKart.TEL.toString(),
               icon: Icon(Icons.phone_android)),
-          Satir(
-              labelText: "Fax: " + cariKart.FAX.toString(),
-              icon: Icon(Icons.fax)),
+         
         ],
       ),
     );

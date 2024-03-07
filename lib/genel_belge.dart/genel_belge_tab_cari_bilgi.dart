@@ -214,9 +214,7 @@ class _genel_belge_tab_cari_bilgiState
                         padding: const EdgeInsets.only(left: 5),
                         child: SizedBox(
                             width: MediaQuery.of(context).size.width * .55,
-                            child: Text(fisEx.fis!.value.cariKart.EFATURAMI
-                                        .toString() ==
-                                    false
+                            child: Text(true
                                 ? "Hayır"
                                 : "Evet"))),
                   ],

@@ -111,19 +111,7 @@ class _genel_belge_tab_urun_listeState
                                       .STOKKOD ||
                               value.BARKOD2! ==
                                   fisEx.fis?.value.fisStokListesi[index]
-                                      .STOKKOD ||
-                              value.BARKOD3! ==
-                                  fisEx.fis?.value.fisStokListesi[index]
-                                      .STOKKOD ||
-                              value.BARKOD4! ==
-                                  fisEx.fis?.value.fisStokListesi[index]
-                                      .STOKKOD ||
-                              value.BARKOD5! ==
-                                  fisEx.fis?.value.fisStokListesi[index]
-                                      .STOKKOD ||
-                              value.BARKOD6! ==
-                                  fisEx
-                                      .fis?.value.fisStokListesi[index].STOKKOD)
+                                      .STOKKOD )
                           .toList();
                         
                       StokKart stokKart = results[0];
@@ -540,7 +528,6 @@ class _genel_belge_tab_urun_listeState
                           stokkart: stokKart,
                           stokAdi: fishareket.STOKADI!,
                           stokKodu: fishareket.STOKKOD!,
-                          KDVOrani: fishareket.KDVORANI!,
                           cariKod: fisEx.fis!.value.CARIKOD!, // sjkanka
                           fiyat: fishareket.BRUTFIYAT!,
                           iskonto: fishareket.ISK!,

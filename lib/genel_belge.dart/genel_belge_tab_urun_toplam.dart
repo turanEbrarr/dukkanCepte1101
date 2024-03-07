@@ -353,10 +353,10 @@ class _genel_belge_tab_urun_toplamState
       fisEx.fis!.value.DOVIZ = altHesaptanGelen!.ACIKLAMA;
       fisEx.fis!.value.KUR = altHesaptanGelen!.KUR;
       fisEx.fis!.value.DOVIZID = altHesaptanGelen!.ID;
-      if (fisEx.fis!.value.cariKart.ISKONTO != 0.0) {
-        fisEx.fis!.value.ISK1 = fisEx.fis!.value.cariKart.ISKONTO;
+      if (true) {
+        fisEx.fis!.value.ISK1 = 0.0;
         genelIskonto1Controller.text =
-            fisEx.fis!.value.cariKart.ISKONTO.toString();
+            "0.0";
         gen1Bas = true;
       }
 
@@ -1540,7 +1540,7 @@ class _genel_belge_tab_urun_toplamState
                     Ctanim.acikFaturaNumrasi);
               } else {
                 if (Ctanim.kullanici!.EFATURA == "E") {
-                  if (fisEx.fis!.value.cariKart.EFATURAMI == "E") {
+                  if (true) { // burada e fatura mı kontrolu vardı
                     fisEx.fis!.value.EFATURAMI = "E";
                     fisEx.fis!.value.EARSIVMI = "H";
                     fisEx.fis!.value.SERINO = Ctanim.kullanici!.EFATURASERINO!;

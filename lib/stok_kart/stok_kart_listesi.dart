@@ -643,19 +643,7 @@ class _stok_kart_listesiState extends State<stok_kart_listesi> {
                                             color: Colors.amber,
                                           ),
                                         ),
-                                        ListTile(
-                                          title: Text("KDV"),
-                                          subtitle: Text(
-                                            "%" +
-                                                stokKart.SATIS_KDV!
-                                                    .toStringAsFixed(2),
-                                            style: TextStyle(fontSize: 17),
-                                          ),
-                                          leading: Icon(
-                                            Icons.receipt_long,
-                                            color: Colors.red,
-                                          ),
-                                        ),
+                                       
                                         ListTile(
                                           title: Text("KDV Dahil"),
                                           subtitle: Text(

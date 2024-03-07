@@ -599,8 +599,7 @@ class _stok_kart_olusturState extends State<stok_kart_olustur> {
                 yeniStok.SFIYAT4 = double.parse(sFiyat4.text);
                 yeniStok.SFIYAT5 = double.parse(sFiyat5.text);
                 yeniStok.AFIYAT1 = double.parse(aFiyat1.text);
-                yeniStok.SATIS_KDV = double.parse(sKDV.text);
-                yeniStok.ALIS_KDV = double.parse(aKDV.text);
+              
 
                 Map<String, dynamic> jsonListesi = yeniStok.toJson();
 
