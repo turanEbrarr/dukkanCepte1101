@@ -92,19 +92,16 @@ class _depo_transfer_genelState extends State<depo_transfer_genel> {
                 });
           } else {
             if (fisEx.fis!.value.fisStokListesi.length != 0) {
-              fisEx.fis!.value.FATURANO =
+              fisEx.fis!.value.BELGENO =
                   Ctanim.depolarArasiTransfer.toString();
               fisEx.fis!.value.BELGENO = Ctanim.depolarArasiTransfer.toString();
               Ctanim.depolarArasiTransfer = Ctanim.depolarArasiTransfer + 1;
               await SharedPrefsHelper.depoTransferNumKaydet(
                   Ctanim.depolarArasiTransfer);
               Fis fiss = fisEx.fis!.value;
-              if (Ctanim.kullanici!.ISLEMAKTARILSIN == "H") {
+              if (Ctanim.kullanici!.ISLEMAKTARILSIN == "E") {
                 fisEx.fis!.value.DURUM = true;
-                final now = DateTime.now();
-                final formatter = DateFormat('HH:mm');
-                String saat = formatter.format(now);
-                fisEx.fis!.value.SAAT = saat;
+             
                 fisEx.fis!.value.KDVDAHIL = "H";
                 await Fis.empty()
                     .fisEkle(fis: fisEx.fis!.value, belgeTipi: "Depo_Transfer");
@@ -137,10 +134,7 @@ class _depo_transfer_genelState extends State<depo_transfer_genel> {
               } else {
                 fisEx.fis!.value.DURUM = true;
                 fisEx.fis!.value.AKTARILDIMI = true;
-                final now = DateTime.now();
-                final formatter = DateFormat('HH:mm');
-                String saat = formatter.format(now);
-                fisEx.fis!.value.SAAT = saat;
+            
                 fisEx.fis!.value.KDVDAHIL = "H";
                 await Fis.empty()
                     .fisEkle(fis: fisEx.fis!.value, belgeTipi: "Depo_Transfer");

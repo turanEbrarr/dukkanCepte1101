@@ -931,15 +931,14 @@ class _genel_belge_stok_kart_guncellemeDialogState
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Ctanim.kullanici!.SISK1 == "E"
-                            ? SizedBox(
+                 SizedBox(
                                 width: x * .3,
                                 child: Text(
                                   "İSK 1",
                                   style: TextStyle(fontSize: 17),
                                 ),
                               )
-                            : SizedBox(width: x * .3, child: Container()),
+                            ,
                         SizedBox(
                             width: x * 0.05,
                             child: VerticalDivider(
@@ -949,12 +948,11 @@ class _genel_belge_stok_kart_guncellemeDialogState
                             )),
                         Padding(
                           padding: EdgeInsets.only(left: x * .05),
-                          child: Ctanim.kullanici!.SISK2 == "E"
-                              ? SizedBox(
+                          child: SizedBox(
                                   width: x * .25,
                                   child: Text("İSK 2",
                                       style: TextStyle(fontSize: 17)))
-                              : SizedBox(width: x * .25, child: Container()),
+                             
                         )
                       ],
                     ),
@@ -968,17 +966,16 @@ class _genel_belge_stok_kart_guncellemeDialogState
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Ctanim.kullanici!.SISK1 == "E"
-                          ? SizedBox(
+                   
+                          SizedBox(
                               width: x * .3,
                               child: TextField(
                                 onChanged: (value) {
                                   iskontoluFiyatHesapla();
                                 },
                                 enabled:
-                                    Ctanim.kullanici!.SISKDEGISTIRILSIN1 == "E"
-                                        ? true
-                                        : false,
+                                        true,
+                              
                                 controller: isk1Controller,
                                 keyboardType: TextInputType.number,
                                 inputFormatters: [
@@ -991,14 +988,14 @@ class _genel_belge_stok_kart_guncellemeDialogState
                                 ),
                               ),
                             )
-                          : Container(),
+                    ,
                       SizedBox(
                           width: x * .05,
                           child: Text(" ", style: TextStyle(fontSize: 17))),
                       Padding(
                         padding: EdgeInsets.only(left: x * .05),
-                        child: Ctanim.kullanici!.SISK2 == "E"
-                            ? SizedBox(
+                        child: 
+                           SizedBox(
                                 width: x * .25,
                                 child: TextField(
                                   focusNode: _focusNode,
@@ -1039,10 +1036,8 @@ class _genel_belge_stok_kart_guncellemeDialogState
                                     }
                                   },
                                   enabled:
-                                      Ctanim.kullanici!.SISKDEGISTIRILSIN2 ==
-                                              "E"
-                                          ? true
-                                          : false,
+                                    true,
+                                        
                                   controller: isk2Controller,
                                   keyboardType: TextInputType.number,
                                   inputFormatters: [
@@ -1055,7 +1050,7 @@ class _genel_belge_stok_kart_guncellemeDialogState
                                   ),
                                 ),
                               )
-                            : Container(),
+                       
                       ),
                     ],
                   ),
@@ -1205,7 +1200,7 @@ class _genel_belge_stok_kart_guncellemeDialogState
                                     KDVOranController.text), //alınmıyor
 
                                 birim: selectedItem.toString(),
-                                birimID: birimID, //cTanima bir map yapılacak
+                              birimID: birimID, //cTanima bir map yapılacak
                                 dovizAdi: dovizAdi,
                                 dovizId: dovizID, // map yapılacak
                                 burutFiyat:

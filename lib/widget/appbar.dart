@@ -78,7 +78,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         },
       );
       listeler.listKur.clear();
-      await bs.getirKur(sirket: Ctanim.sirket!);
+      await bs.getirKur();
 
       Navigator.of(context).pop();
 

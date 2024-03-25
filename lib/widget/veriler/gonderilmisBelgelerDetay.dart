@@ -151,7 +151,7 @@ class FisHareketDataTable extends StatelessWidget {
                     : Container(),
                      SizedBox(
                     height: 20,
-                    child: Text(fis.FATURANO.toString(),
+                    child: Text(fis.BELGENO.toString(),
                         style: TextStyle(
                           fontSize: 13,
                         ))),

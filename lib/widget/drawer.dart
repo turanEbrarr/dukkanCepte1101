@@ -93,25 +93,18 @@ class _MyDrawerState extends State<MyDrawer> {
 
     List<String?> hatalar = [];
     // await bs.getKullanicilar(kullaniciKodu: "5", sirket: Ctanim.sirket!);
-    hatalar.add(await bs.getirFisEkParam(
-          sirket: Ctanim.sirket!));
 
-    hatalar.add(await bs.getirPlasiyerYetki(
-        sirket: Ctanim.sirket!, kullaniciKodu: Ctanim.kullanici!.KOD!,IP: Ctanim.IP));
-    hatalar.add(await bs.getirRaf(sirket: Ctanim.sirket!));
-    hatalar.add(await bs.getirOlcuBirim(sirket: Ctanim.sirket!));
+
+    hatalar.add(await bs.getirPlasiyerYetki( ));
+
+    hatalar.add(await bs.getirOlcuBirim());
     hatalar.add(await stokKartEx.servisStokGetir());
     hatalar.add(await cariEx.servisCariGetir());
-    hatalar.add(await bs.getirSubeDepo(sirket: Ctanim.sirket!));
-    hatalar.add(await bs.getirKur(sirket: Ctanim.sirket!));
+    hatalar.add(await bs.getirSubeDepo());
+    hatalar.add(await bs.getirKur());
 
-    hatalar.add(await bs.getirPlasiyerBanka(
-        sirket: Ctanim.sirket!, kullaniciKodu: Ctanim.kullanici!.KOD!));
-    hatalar.add(await bs.getirPlasiyerBankaSozlesme(
-        sirket: Ctanim.sirket!, kullaniciKodu: Ctanim.kullanici!.KOD!));
 
-     hatalar.add(await bs.getirOndalikParam(subeId: int.parse(Ctanim.kullanici!.YERELSUBEID!), sirket: Ctanim.sirket!));
-        hatalar.add(await bs.getirStokDepo(sirket: Ctanim.sirket!,plasiyerKod: Ctanim.kullanici!.KOD!));
+
     if (hatalar.length > 0) {
       for (var element in hatalar) {
         if (element != "") {

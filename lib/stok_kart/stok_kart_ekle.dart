@@ -86,15 +86,11 @@ class _stok_kart_olusturState extends State<stok_kart_olustur> {
                 ),
                 child: TextFormField(
                   controller: urunBarkod,
-                  readOnly:
-                      Ctanim.kullanici!.OTOMATIKSTOKKODU == "H" ? false : true,
                   cursorColor: Color.fromARGB(255, 60, 59, 59),
                   decoration: InputDecoration(
-                      hintText: Ctanim.kullanici!.OTOMATIKSTOKKODU == "H"
-                          ? ""
-                          : "Otomatik Barkod Oluşturma Aktif",
-                      suffixIcon: Ctanim.kullanici!.OTOMATIKSTOKKODU == "H"
-                          ? GestureDetector(
+       
+                      suffixIcon: 
+                      GestureDetector(
                               onTap: () async {
                                 var res = await Navigator.push(
                                     context,
@@ -117,7 +113,7 @@ class _stok_kart_olusturState extends State<stok_kart_olustur> {
                                 ),
                               ),
                             )
-                          : null,
+                          ,
                       label: Text(
                         "Barkod",
                         style: TextStyle(
@@ -588,7 +584,7 @@ class _stok_kart_olusturState extends State<stok_kart_olustur> {
               ),
               onPressed: () async {
                 BaseService bs = BaseService();
-                StokKart yeniStok = StokKart();
+                StokKart yeniStok = StokKart.empty();
                 yeniStok.ADI = urunIsmi.text;
                 yeniStok.KOD = urunBarkod.text;
                 yeniStok.OLCUBR1 = int.parse(seciliBirim!.ID!.toString());
@@ -601,7 +597,7 @@ class _stok_kart_olusturState extends State<stok_kart_olustur> {
                 yeniStok.AFIYAT1 = double.parse(aFiyat1.text);
               
 
-                Map<String, dynamic> jsonListesi = yeniStok.toJson();
+                Map<String, dynamic> jsonListesi =yeniStok.toJson();
 
                 setState(() {});
                 showDialog(

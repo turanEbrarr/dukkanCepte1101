@@ -11,8 +11,8 @@ class SHataModel {
   factory SHataModel.fromJson(Map<String, dynamic> json) {
 
     return SHataModel(
-        Hata: json['Hata'].toString(),
-        HataMesaj: json['HataMesaj'].toString(),
+        Hata: json['hata'].toString(),
+        HataMesaj: json['hataMesaj'].toString(),
        );
   }
 }

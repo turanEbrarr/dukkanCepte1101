@@ -144,7 +144,7 @@ Future<Uint8List> makePdf(Fis m, Uint8List imagePath) async {
                                 height: 20,
                                 child: Text(
                                   
-                                        m.FATURANO! ,
+                                        m.BELGENO! ,
                                     style: pw.TextStyle(
                                         fontSize: 15,
                                         fontWeight: pw.FontWeight.bold,

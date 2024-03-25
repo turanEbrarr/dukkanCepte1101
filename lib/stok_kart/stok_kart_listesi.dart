@@ -567,13 +567,8 @@ class _stok_kart_listesiState extends State<stok_kart_listesi> {
                                                           },
                                                         );
 
-                                                        List<dynamic> donen =
-                                                            await bs.getirStokResim(
-                                                                sirket: Ctanim
-                                                                    .sirket!,
-                                                                stokKod:
-                                                                    stokKart
-                                                                        .KOD!);
+                                                        List<dynamic> donen = [true];
+                                                    
                                                         if (donen[0] == true) {
                                                           hataGoster(
                                                               context1: context,

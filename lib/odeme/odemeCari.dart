@@ -189,8 +189,8 @@ class _odeme_cariState extends State<odeme_cari> {
                                         tahsilatEx.tahsilat?.value.CARIADI =
                                             cariEx.searchCariList[index].ADI;
                                         tahsilatEx.tahsilat!.value.SUBEID =
-                                            int.parse(
-                                                Ctanim.kullanici!.YERELSUBEID!);
+                                   
+                                                Ctanim.kullanici!.YERELSUBEID;
                                         tahsilatEx.tahsilat?.value.cariKart =
                                             cariEx.searchCariList[index];
                                         Get.to(() => odeme_detay_tab_page(

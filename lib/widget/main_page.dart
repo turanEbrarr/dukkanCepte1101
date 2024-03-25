@@ -454,42 +454,9 @@ class _MainPageState extends State<MainPage> {
                 },
               );
               try {
-                List<List<dynamic>> gelenNakitDurum =
-                    await bs.getirFinansNakitDurum(sirket: Ctanim.sirket!);
-                List<List<dynamic>> gelenSatisDurum =
-                    await bs.getirFinansSatisDurum(sirket: Ctanim.sirket!);
-                List<List<dynamic>> gelenSiparisTeklifDurum = await bs
-                    .getirFinansSiparisTeklifDurum(sirket: Ctanim.sirket!);
-                List<List<dynamic>> gelenCekSenetDurum =
-                    await bs.getirFinansCekSenetDurum(sirket: Ctanim.sirket!);
-                List<List<dynamic>> gelenCariDurum =
-                    await bs.getirFinansCariDurum(sirket: Ctanim.sirket!);
-                String genelHata = "";
-                if (gelenNakitDurum[0].length == 1 &&
-                    gelenNakitDurum[1].length == 0 &&
-                    gelenNakitDurum[2].length == 0) {
-                  genelHata = genelHata + "\n" + gelenNakitDurum[0][0];
-                }
-                if (gelenSatisDurum[0].length == 1 &&
-                    gelenSatisDurum[1].length == 0 &&
-                    gelenSatisDurum[2].length == 0) {
-                  genelHata = genelHata + "\n" + gelenSatisDurum[0][0];
-                }
-                if (gelenSiparisTeklifDurum[0].length == 1 &&
-                    gelenSiparisTeklifDurum[1].length == 0 &&
-                    gelenSiparisTeklifDurum[2].length == 0) {
-                  genelHata = genelHata + "\n" + gelenSiparisTeklifDurum[0][0];
-                }
-                if (gelenCekSenetDurum[0].length == 1 &&
-                    gelenCekSenetDurum[1].length == 0 &&
-                    gelenCekSenetDurum[2].length == 0) {
-                  genelHata = genelHata + "\n" + gelenCekSenetDurum[0][0];
-                }
-                if (gelenCariDurum[0].length == 1 &&
-                    gelenCariDurum[1].length == 0 &&
-                    gelenCariDurum[2].length == 0) {
-                  genelHata = genelHata + "\n" + gelenCekSenetDurum[0][0];
-                }
+    
+                String genelHata = "sad";
+               
                 if (genelHata != "") {
                   showDialog(
                       context: context,

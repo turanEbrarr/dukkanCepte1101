@@ -297,170 +297,7 @@ class _genel_belge_main_pageState extends State<genel_belge_main_page> {
                                                                       fisEx.list_fis[
                                                                           index];
                                                                   // e-fatura kontrolu ve fatura no ekleme işlemi
-                                                                  if (widget
-                                                                          .belgeTipi ==
-                                                                      "Satis_Fatura") {
-                                                                    if (fisEx
-                                                                            .list_fis[index]
-                                                                            .ISLEMTIPI ==
-                                                                        "1") {
-                                                                      // acik islem tipi seçili
-                                                                      fisEx
-                                                                          .list_fis[
-                                                                              index]
-                                                                          .EFATURAMI = "H";
-                                                                      fisEx
-                                                                          .list_fis[
-                                                                              index]
-                                                                          .EARSIVMI = "H";
-                                                                      fisEx.list_fis[index].SERINO = Ctanim
-                                                                          .kullanici!
-                                                                          .FATURAACIKSERI_SERINO!;
-                                                                      fisEx.list_fis[index].BELGENO = Ctanim
-                                                                          .acikFaturaNumrasi
-                                                                          .toString();
-                                                                      fisEx.list_fis[index].FATURANO = Ctanim
-                                                                          .acikFaturaNumrasi
-                                                                          .toString();
-                                                                      Ctanim.acikFaturaNumrasi =
-                                                                          Ctanim.acikFaturaNumrasi +
-                                                                              1;
-                                                                      await SharedPrefsHelper.acikFaturaNumarasiKaydet(
-                                                                          Ctanim
-                                                                              .acikFaturaNumrasi);
-                                                                    } else {
-                                                                      if (Ctanim
-                                                                              .kullanici!
-                                                                              .EFATURA ==
-                                                                          "E") {
-                                                                        if (true) { // BURADA E FATURA KONTROLU VARDI
-                                                                          fisEx.list_fis[index].SERINO = Ctanim
-                                                                              .kullanici!
-                                                                              .EFATURASERINO!;
-                                                                          fisEx.list_fis[index].BELGENO = Ctanim
-                                                                              .faturaNumarasi
-                                                                              .toString();
-                                                                          fisEx.list_fis[index].FATURANO = Ctanim
-                                                                              .eFaturaNumarasi
-                                                                              .toString();
-                                                                          Ctanim.eFaturaNumarasi =
-                                                                              Ctanim.eFaturaNumarasi + 1;
-                                                                          SharedPrefsHelper.efaturaNumarasiKaydet(
-                                                                              Ctanim.eFaturaNumarasi);
-                                                                        } else {
-                                                                          // cari efatura değil
-                                                                          fisEx.list_fis[index].SERINO = Ctanim
-                                                                              .kullanici!
-                                                                              .EARSIVSERINO!;
-                                                                          fisEx.list_fis[index].BELGENO = Ctanim
-                                                                              .eArsivNumarasi
-                                                                              .toString();
-                                                                          fisEx.list_fis[index].FATURANO = Ctanim
-                                                                              .eArsivNumarasi
-                                                                              .toString();
-                                                                          Ctanim.eArsivNumarasi =
-                                                                              Ctanim.eArsivNumarasi + 1;
-                                                                          SharedPrefsHelper.eArsivNumarasiKaydet(
-                                                                              Ctanim.eArsivNumarasi);
-                                                                        }
-                                                                      } else {
-                                                                        // kullanıcı eftura değil
-                                                                        fisEx.list_fis[index].SERINO = Ctanim
-                                                                            .kullanici!
-                                                                            .FATURASERISERINO!;
-                                                                        fisEx.list_fis[index].BELGENO = Ctanim
-                                                                            .faturaNumarasi
-                                                                            .toString();
-                                                                        fisEx.list_fis[index].FATURANO = Ctanim
-                                                                            .faturaNumarasi
-                                                                            .toString();
-                                                                        Ctanim.faturaNumarasi =
-                                                                            Ctanim.faturaNumarasi +
-                                                                                1;
-                                                                        SharedPrefsHelper.faturaNumarasiKaydet(
-                                                                            Ctanim.faturaNumarasi);
-                                                                      }
-                                                                    }
-                                                                  }
-                                                                  if (widget
-                                                                          .belgeTipi ==
-                                                                      "Satis_Irsaliye") {
-                                                                    if (Ctanim
-                                                                            .kullanici!
-                                                                            .EIRSALIYE ==
-                                                                        "E") {
-                                                                      fisEx.list_fis[index].BELGENO = Ctanim
-                                                                          .eirsaliyeNumarasi
-                                                                          .toString();
-                                                                      fisEx.list_fis[index].SERINO = Ctanim
-                                                                          .kullanici!
-                                                                          .EIRSALIYESERINO!;
-                                                                      fisEx.list_fis[index].FATURANO = Ctanim
-                                                                          .eirsaliyeNumarasi
-                                                                          .toString();
-                                                                      Ctanim.eirsaliyeNumarasi =
-                                                                          Ctanim.eirsaliyeNumarasi +
-                                                                              1;
-                                                                      await SharedPrefsHelper.eirsaliyeNumarasiKaydet(
-                                                                          Ctanim
-                                                                              .eirsaliyeNumarasi);
-                                                                    } else {
-                                                                      // kullanıcı eftura değil
-                                                                      fisEx.list_fis[index].SERINO = Ctanim
-                                                                          .kullanici!
-                                                                          .IRSALIYESERISERINO!;
-                                                                      fisEx.list_fis[index].BELGENO = Ctanim
-                                                                          .irsaliyeNumarasi
-                                                                          .toString();
-                                                                      fisEx.fis!.value
-                                                                              .FATURANO =
-                                                                          Ctanim
-                                                                              .irsaliyeNumarasi
-                                                                              .toString();
-                                                                      Ctanim.irsaliyeNumarasi =
-                                                                          Ctanim.irsaliyeNumarasi +
-                                                                              1;
-                                                                      await SharedPrefsHelper.irsaliyeNumarasiKaydet(
-                                                                          Ctanim
-                                                                              .irsaliyeNumarasi);
-                                                                    }
-                                                                  }
-                                                                  if (widget
-                                                                          .belgeTipi ==
-                                                                      "Musteri_Siparis") {
-                                                                    fisEx.list_fis[index].FATURANO = Ctanim
-                                                                        .siparisNumarasi
-                                                                        .toString();
-                                                                    fisEx.list_fis[index].BELGENO = Ctanim
-                                                                        .siparisNumarasi
-                                                                        .toString();
-                                                                    fisEx.list_fis[index].FATURANO = Ctanim
-                                                                        .siparisNumarasi
-                                                                        .toString();
-                                                                    Ctanim.siparisNumarasi =
-                                                                        Ctanim.siparisNumarasi +
-                                                                            1;
-                                                                    await SharedPrefsHelper
-                                                                        .siparisNumarasiKaydet(
-                                                                            Ctanim.siparisNumarasi);
-                                                                  }
-                                                                  if (widget
-                                                                          .belgeTipi ==
-                                                                      "Perakende_Satis") {
-                                                                    fisEx.list_fis[index].FATURANO = Ctanim
-                                                                        .perakendeSatisNumarasi
-                                                                        .toString();
-                                                                    fisEx.list_fis[index].BELGENO = Ctanim
-                                                                        .perakendeSatisNumarasi
-                                                                        .toString();
-
-                                                                    Ctanim.perakendeSatisNumarasi =
-                                                                        Ctanim.perakendeSatisNumarasi +
-                                                                            1;
-                                                                    await SharedPrefsHelper
-                                                                        .perakendeSatisNumKaydet(
-                                                                            Ctanim.perakendeSatisNumarasi);
-                                                                  }
+                                                                 
 
                                                                   if (Ctanim
                                                                           .kullanici!
@@ -480,10 +317,7 @@ class _genel_belge_main_pageState extends State<genel_belge_main_page> {
                                                                         saat =
                                                                         formatter
                                                                             .format(now);
-                                                                    fisEx
-                                                                        .list_fis[
-                                                                            index]
-                                                                        .SAAT = saat;
+                                                                   
 
                                                                     Fis.empty().fisEkle(
                                                                         fis: fisEx.list_fis[
@@ -545,10 +379,7 @@ class _genel_belge_main_pageState extends State<genel_belge_main_page> {
                                                                         saat =
                                                                         formatter
                                                                             .format(now);
-                                                                    fisEx
-                                                                        .list_fis[
-                                                                            index]
-                                                                        .SAAT = saat;
+                                                                    
                                                                     fisEx
                                                                         .list_fis[
                                                                             index]

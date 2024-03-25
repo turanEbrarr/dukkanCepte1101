@@ -16,8 +16,6 @@ import '../widget/ctanim.dart';
 class Fis {
   int? ID = 0;
   int? TIP = 0;
-  String EFATURAMI = "";
-  String EARSIVMI = "";
   int? SUBEID = 0;
   int? DEPOID = 0;
   int? GIDENDEPOID = 0;
@@ -26,13 +24,9 @@ class Fis {
   String? CARIADI = "";
   String? ALTHESAP = "";
   String? BELGENO = "";
-  String? SERINO = "";
+
   String? TARIH = DateFormat("yyyy-MM-dd").format(DateTime.now());
   String? ACIKLAMA1 = "";
-  String? ACIKLAMA2 = "";
-  String? ACIKLAMA3 = "";
-  String? ACIKLAMA4 = "";
-  String? ACIKLAMA5 = "";
   String? VADEGUNU = "";
   String? VADETARIHI = DateFormat("yyyy-MM-dd").format(DateTime.now());
   String? KDVDAHIL = "H";
@@ -54,9 +48,8 @@ class Fis {
   String? ISLEMTIPI = "";
   String? PLASIYERKOD = "";
   int? ALTHESAPID = 0;
-  String? FATURANO = "";
   String? TESLIMTARIHI = DateFormat("yyyy-MM-dd").format(DateTime.now());
-  String? SAAT = "";
+
   int? DOVIZID = 0;
   String? ONAY = "H";
   List<FisEkParam> listFisEkParam = [];
@@ -64,8 +57,7 @@ class Fis {
   Fis(
       this.ID,
       this.TIP,
-      this.EFATURAMI,
-      this.EARSIVMI,
+   
       this.SUBEID,
       this.DEPOID,
       this.GIDENDEPOID,
@@ -74,13 +66,10 @@ class Fis {
       this.CARIADI,
       this.ALTHESAP,
       this.BELGENO,
-      this.SERINO,
+    
       this.TARIH,
       this.ACIKLAMA1,
-      this.ACIKLAMA2,
-      this.ACIKLAMA3,
-      this.ACIKLAMA4,
-      this.ACIKLAMA5,
+ 
       this.VADEGUNU,
       this.VADETARIHI,
       this.KDVDAHIL,
@@ -99,9 +88,9 @@ class Fis {
       this.ISLEMTIPI,
       this.PLASIYERKOD,
       this.ALTHESAPID,
-      this.FATURANO,
+  
       this.TESLIMTARIHI,
-      this.SAAT,
+   
       this.DOVIZID,
       this.ONAY,
       {this.isExpanded = false});
@@ -109,8 +98,7 @@ class Fis {
       : this(
           0,
           0,
-          "",
-          "",
+       
           0,
           0,
           0,
@@ -119,13 +107,11 @@ class Fis {
           "",
           "",
           "",
-          "",
+         
           DateFormat("yyyy-MM-dd").format(DateTime.now()),
           "",
-          "",
-          "",
-          "",
-          "",
+      
+    
           "",
           DateFormat("yyyy-MM-dd").format(DateTime.now()),
           "H",
@@ -144,9 +130,9 @@ class Fis {
           "",
           "",
           0,
-          "",
+        
           DateFormat("yyyy-MM-dd").format(DateTime.now()),
-          "",
+      
           0,
           "H",
         );
@@ -154,8 +140,7 @@ class Fis {
   Fis.fromFis(Fis fis, List<FisHareket> fisHareket) {
     this.ID = fis.ID;
     this.TIP = fis.TIP;
-    this.EFATURAMI = fis.EFATURAMI;
-    this.EARSIVMI = fis.EARSIVMI;
+
     this.SUBEID = fis.SUBEID;
     this.DEPOID = fis.DEPOID;
     this.GIDENDEPOID = fis.GIDENDEPOID;
@@ -164,13 +149,10 @@ class Fis {
     this.CARIADI = fis.CARIADI;
     this.ALTHESAP = fis.ALTHESAP;
     this.BELGENO = fis.BELGENO;
-    this.SERINO = fis.SERINO;
+
     this.TARIH = fis.TARIH;
     this.ACIKLAMA1 = fis.ACIKLAMA1;
-    this.ACIKLAMA2 = fis.ACIKLAMA2;
-    this.ACIKLAMA3 = fis.ACIKLAMA3;
-    this.ACIKLAMA4 = fis.ACIKLAMA4;
-    this.ACIKLAMA5 = fis.ACIKLAMA5;
+    
     this.VADEGUNU = fis.VADEGUNU;
     this.VADETARIHI = fis.VADETARIHI;
     this.KDVDAHIL = fis.KDVDAHIL;
@@ -189,9 +171,9 @@ class Fis {
     this.ISLEMTIPI = fis.ISLEMTIPI;
     this.PLASIYERKOD = fis.PLASIYERKOD;
     this.ALTHESAPID = ALTHESAPID;
-    this.FATURANO = fis.FATURANO;
+   
     this.TESLIMTARIHI = fis.TESLIMTARIHI;
-    this.SAAT = fis.SAAT;
+
     this.DOVIZID = fis.DOVIZID;
     this.ONAY = fis.ONAY;
     this.fisStokListesi = fisHareket;
@@ -200,8 +182,7 @@ class Fis {
     final Map<String, dynamic> data = <String, dynamic>{};
     data["ID"] = ID;
     data['TIP'] = TIP;
-    data["EFATURAMI"] = EFATURAMI;
-    data["EARSIVMI"] = EARSIVMI;
+
     data['SUBEID'] = SUBEID;
     data['DEPOID'] = DEPOID;
     data['GIDENDEPOID'] = GIDENDEPOID;
@@ -210,13 +191,10 @@ class Fis {
     data['CARIADI'] = CARIADI;
     data['ALTHESAP'] = ALTHESAP;
     data['BELGENO'] = BELGENO;
-    data['SERINO'] = SERINO;
+
     data['TARIH'] = TARIH;
     data['ACIKLAMA1'] = ACIKLAMA1;
-    data['ACIKLAMA2'] = ACIKLAMA2;
-    data['ACIKLAMA3'] = ACIKLAMA3;
-    data['ACIKLAMA4'] = ACIKLAMA4;
-    data['ACIKLAMA5'] = ACIKLAMA5;
+
     data['VADEGUNU'] = VADEGUNU;
     data['VADETARIHI'] = VADETARIHI;
     data['KDVDAHIL'] = KDVDAHIL;
@@ -235,9 +213,9 @@ class Fis {
     data['ISLEMTIPI'] = ISLEMTIPI;
     data['PLASIYERKOD'] = PLASIYERKOD;
     data['ALTHESAPID'] = ALTHESAPID;
-    data['FATURANO'] = FATURANO;
+  
     data['TESLIMTARIHI'] = TESLIMTARIHI;
-    data['SAAT'] = SAAT;
+
     data['DOVIZID'] = DOVIZID;
     data['ONAY'] = ONAY;
 
@@ -248,8 +226,7 @@ class Fis {
     final Map<String, dynamic> data = <String, dynamic>{};
     data["ID"] = ID.toString();
     data['TIP'] = TIP.toString();
-    data["EFATURAMI"] = EFATURAMI.toString();
-    data["EARSIVMI"] = EARSIVMI.toString();
+   
 
     data['SUBEID'] = SUBEID.toString();
     data['DEPOID'] = DEPOID.toString();
@@ -261,13 +238,10 @@ class Fis {
     data['CARIADI'] = CARIADI.toString();
     data['ALTHESAP'] = ALTHESAP.toString();
     data['BELGENO'] = BELGENO.toString();
-    data['SERINO'] = SERINO.toString();
+  
     data['TARIH'] = TARIH.toString();
     data['ACIKLAMA1'] = ACIKLAMA1.toString();
-    data['ACIKLAMA2'] = ACIKLAMA2.toString();
-    data['ACIKLAMA3'] = ACIKLAMA3.toString();
-    data['ACIKLAMA4'] = ACIKLAMA4.toString();
-    data['ACIKLAMA5'] = ACIKLAMA5.toString();
+ 
     data['VADEGUNU'] = VADEGUNU.toString();
     data['VADETARIHI'] = VADETARIHI.toString();
     data['KDVDAHIL'] = KDVDAHIL.toString();
@@ -286,9 +260,9 @@ class Fis {
     data['ISLEMTIPI'] = ISLEMTIPI.toString();
     data['PLASIYERKOD'] = PLASIYERKOD.toString();
     data['ALTHESAPID'] = ALTHESAPID.toString();
-    data['FATURANO'] = FATURANO.toString();
+
     data['TESLIMTARIHI'] = TESLIMTARIHI.toString();
-    data['SAAT'] = SAAT.toString();
+
     data['DOVIZID'] = DOVIZID.toString();
     data['ONAY'] = ONAY.toString();
     data['STOKLISTESI'] = fisStokListesi.map((fis1) => fis1.toJson()).toList();
@@ -302,8 +276,7 @@ class Fis {
   Fis.fromJson(Map<String, dynamic> json) {
     ID = int.parse(json['ID'].toString());
     TIP = int.parse(json['TIP'].toString());
-    EFATURAMI = json["EFATURAMI"].toString();
-    EARSIVMI = json["EARSIVMI"].toString();
+
     SUBEID = int.parse(json['SUBEID'].toString());
     DEPOID = int.parse(json['DEPOID'].toString());
     GIDENDEPOID = int.parse(json['GIDENDEPOID'].toString());
@@ -312,13 +285,10 @@ class Fis {
     CARIADI = json['CARIADI'];
     ALTHESAP = json['ALTHESAP'];
     BELGENO = json['BELGENO'];
-    SERINO = json['SERINO'];
+  
     TARIH = json['TARIH'];
     ACIKLAMA1 = json['ACIKLAMA1'];
-    ACIKLAMA2 = json['ACIKLAMA2'];
-    ACIKLAMA3 = json['ACIKLAMA3'];
-    ACIKLAMA4 = json['ACIKLAMA4'];
-    ACIKLAMA5 = json['ACIKLAMA5'];
+
     VADEGUNU = json['VADEGUNU'];
     VADETARIHI = json['VADETARIHI'];
     KDVDAHIL = json['KDVDAHIL']; //  bool.fromEnvironment();
@@ -336,9 +306,9 @@ class Fis {
     UUID = json['UUID'];
     ISLEMTIPI = json['ISLEMTIPI'];
     PLASIYERKOD = json['PLASIYERKOD'];
-    FATURANO = json['FATURANO'];
+
     TESLIMTARIHI = json['TESLIMTARIHI'];
-    SAAT = json['SAAT'];
+
     ALTHESAPID = int.parse(json['ALTHESAPID'].toString());
     DOVIZID = int.parse(json['DOVIZID'].toString());
     ONAY = json['ONAY'];
@@ -346,8 +316,7 @@ class Fis {
   Fis.fromJson2(Map<String, dynamic> json) {
     ID = int.parse(json['ID'].toString());
     TIP = int.parse(json['TIP'].toString());
-    EFATURAMI = json["EFATURAMI"].toString();
-    EARSIVMI = json["EARSIVMI"].toString();
+  
     SUBEID = int.parse(json['SUBEID'].toString());
     DEPOID = int.parse(json['DEPOID'].toString());
     GIDENDEPOID = int.parse(json['GIDENDEPOID'].toString());
@@ -356,13 +325,10 @@ class Fis {
     CARIADI = json['CARIADI'];
     ALTHESAP = json['ALTHESAP'];
     BELGENO = json['BELGENO'];
-    SERINO = json['SERINO'];
+    
     TARIH = json['TARIH'];
     ACIKLAMA1 = json['ACIKLAMA1'];
-    ACIKLAMA2 = json['ACIKLAMA2'];
-    ACIKLAMA3 = json['ACIKLAMA3'];
-    ACIKLAMA4 = json['ACIKLAMA4'];
-    ACIKLAMA5 = json['ACIKLAMA5'];
+    
     VADEGUNU = json['VADEGUNU'];
     VADETARIHI = json['VADETARIHI'];
     KDVDAHIL = json['KDVDAHIL']; //  bool.fromEnvironment();
@@ -379,9 +345,9 @@ class Fis {
     UUID = json['UUID'];
     ISLEMTIPI = json['ISLEMTIPI'];
     PLASIYERKOD = json['PLASIYERKOD'];
-    FATURANO = json['FATURANO'];
+
     TESLIMTARIHI = json['TESLIMTARIHI'];
-    SAAT = json['SAAT'];
+
     ALTHESAPID = int.parse(json['ALTHESAPID'].toString());
     DOVIZID = int.parse(json['DOVIZID'].toString());
     ONAY = json['ONAY'];

@@ -73,7 +73,7 @@ class _tahsilat_toplamState extends State<tahsilat_toplam> {
           onPressed: () async {
             if (tahsilatEx.tahsilat!.value.tahsilatHareket.length != 0) {
               Tahsilat fiss = tahsilatEx.tahsilat!.value;
-              if (Ctanim.kullanici!.ISLEMAKTARILSIN == "H") {
+              if (Ctanim.kullanici!.ISLEMAKTARILSIN == "E") {
                 Tahsilat fiss = tahsilatEx.tahsilat!.value;
                 tahsilatEx.tahsilat!.value.DURUM = true;
                 await Tahsilat.empty().tahsilatEkle(

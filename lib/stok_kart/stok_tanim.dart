@@ -88,6 +88,35 @@ class StokKart {
       this.BARKODCARPAN2,
       this.guncelDegerler,
   });
+  StokKart.empty():this(
+      ID: 0,
+      KOD: "",
+      ADI: "",
+      TIP: "",
+      MARKA: "",
+      SFIYAT1: 0.0,
+      SFIYAT2: 0.0,
+      SFIYAT3: 0.0,
+      SFIYAT4: 0.0,
+      SFIYAT5: 0.0,
+      SATISISK: 0.0,
+      OLCUBIRIM1: "",
+      OLCUBIRIM2: "",
+      SATDOVIZ: "",
+      AFIYAT1: 0.0,
+      ALISISK: 0.0,
+      BAKIYE: 0,
+      OLCUBR1: 0,
+      OLCUBR2: 0,
+      BIRIMADET1: 0.0,
+      BIRIMADET2: 0.0,
+      BARKOD1: "",
+      BARKOD2: "",
+      ACIKLAMA: "",
+      BARKODCARPAN1: 0.0,
+      BARKODCARPAN2: 0.0,
+      guncelDegerler: guncelDeger()
+  );
 
   StokKart.fromJson(Map<String, dynamic> json) {
     ID =int.parse(json['ID'].toString());

@@ -329,10 +329,7 @@ class _depo_transfer_main_pageState extends State<depo_transfer_main_page> {
                                                                         .list_fis[
                                                                             index]
                                                                         .DURUM = true;
-                                                                    fisEx
-                                                                        .list_fis[
-                                                                            index]
-                                                                        .SAAT = saat;
+                                                                  
                                                                     Fis.empty().fisEkle(
                                                                         fis: fisEx.list_fis[
                                                                             index],
@@ -403,10 +400,7 @@ class _depo_transfer_main_pageState extends State<depo_transfer_main_page> {
                                                                         .list_fis[
                                                                             index]
                                                                         .AKTARILDIMI = true;
-                                                                    fisEx
-                                                                        .list_fis[
-                                                                            index]
-                                                                        .SAAT = saat;
+                                                                
                                                                     Fis.empty().fisEkle(
                                                                         fis: fisEx.list_fis[
                                                                             index],

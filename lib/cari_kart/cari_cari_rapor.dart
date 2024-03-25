@@ -130,36 +130,7 @@ class _cari_cari_raporState extends State<cari_cari_rapor> {
                                           )),
                                 );
                               }
-                            } else if (rapor[index] ==
-                                "Cari Alt Hesap Bakiye") {
-                              List<bool> cek =
-                                  await SharedPrefsHelper.filtreCek(
-                                      "cariAltHesapBakiyeRapor");
-                              donen = await bs.getirAltHesapBakiye(
-                                  sirket: Ctanim.sirket!,
-                                  cariKodu: widget.cariKart.KOD!);
-                              if (donen[0].length == 1 &&
-                                  donen[1].length == 0) {
-                                hataGoster(donen);
-                              } else {
-                                // gelenlerden colon kaldırıldıysa veya eklendiyse favorileri temizle
-                                if (donen[1].length != cek.length) {
-                                  cek.clear();
-                                  for (var i = 0; i < donen[1].length; i++) {
-                                    cek.add(true);
-                                  }
-                                }
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                      builder: (context) => genel_cari_rapor(
-                                            gelenBakiyeRapor: donen,
-                                            gelenFiltre: cek,
-                                            cariKart: widget.cariKart,
-                                            raporAdi: 'Cari Alt Hesap Bakiye',
-                                          )),
-                                );
-                              }
-                            } else if (rapor[index] == "Siparişler") {
+                            }  else if (rapor[index] == "Siparişler") {
                              
                             } else if (rapor[index] == "Faturalar") {
                               Navigator.push(
@@ -173,39 +144,7 @@ class _cari_cari_raporState extends State<cari_cari_rapor> {
                                           ))));
                             } else if (rapor[index] == "İrsaliyeler") {
                             
-                            } else if (rapor[index] ==
-                                "Müşteri Çek Senet Listesi") {
-                              List<bool> cek =
-                                  await SharedPrefsHelper.filtreCek(
-                                      "musteriCekSenetListesiRapor");
-                              donen = await bs.getirCariCekSenet(
-                                  sirket: Ctanim.sirket!,
-                                  cariKodu: widget.cariKart.KOD!,
-                                  basTar: Ctanim.son10GunDon()[0],
-                                  bitTar: Ctanim.son10GunDon()[1]);
-                              if (donen[0].length == 1 &&
-                                  donen[1].length == 0) {
-                                hataGoster(donen);
-                              } else {
-                                // gelenlerden colon kaldırıldıysa veya eklendiyse favorileri temizle
-                                if (donen[1].length != cek.length) {
-                                  cek.clear();
-                                  for (var i = 0; i < donen[1].length; i++) {
-                                    cek.add(true);
-                                  }
-                                }
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                      builder: (context) => genel_cari_rapor(
-                                            gelenBakiyeRapor: donen,
-                                            gelenFiltre: cek,
-                                            cariKart: widget.cariKart,
-                                            raporAdi:
-                                                'Müşteri Çek Senet Listesi',
-                                          )),
-                                );
-                              }
-                            }
+                            } 
                           },
                         ),
                       )),

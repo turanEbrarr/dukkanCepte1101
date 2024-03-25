@@ -232,8 +232,8 @@ class _genel_belge_cari_pageState extends State<genel_belge_cari_page> {
     fisEx.fis!.value.DOVIZID = anaBirimID;
     fisEx.fis!.value.KUR = kurGelen;
 
-    fisEx.fis!.value.DEPOID = int.parse(Ctanim.kullanici!.YERELDEPOID!);
-    fisEx.fis!.value.SUBEID = int.parse(Ctanim.kullanici!.YERELSUBEID!);
+    fisEx.fis!.value.DEPOID = Ctanim.kullanici!.YERELDEPOID!;
+    fisEx.fis!.value.SUBEID = Ctanim.kullanici!.YERELSUBEID!;
 
     fisEx.fis!.value.UUID = uuid.v1();
     fisEx.fis!.value.PLASIYERKOD = Ctanim.kullanici!.KOD;
@@ -334,20 +334,18 @@ class _genel_belge_cari_pageState extends State<genel_belge_cari_page> {
                                       doviAdi = kur.ACIKLAMA!;
                                     }
                                   }
-                                  if (belgeAdi == "Alis_Fatura") {
-                                    fisEx.fis!.value.FATURANO = belgeNo.text;
-                                  }else{
+                                
                                     fisEx.fis!.value.BELGENO = belgeNo.text;
-                                  }
+                                  
                                   
                                   fisEx.fis!.value.DOVIZ = doviAdi;
                                   fisEx.fis!.value.DOVIZID = anaBirimID;
                                   fisEx.fis!.value.KUR = kurGelen;
 
                                   fisEx.fis!.value.DEPOID =
-                                      int.parse(Ctanim.kullanici!.YERELDEPOID!);
+                                     Ctanim.kullanici!.YERELDEPOID;
                                   fisEx.fis!.value.SUBEID =
-                                      int.parse(Ctanim.kullanici!.YERELSUBEID!);
+                                      Ctanim.kullanici!.YERELSUBEID!;
                                   fisEx.fis?.value.CARIKOD =
                                       cariEx.searchCariList[index].KOD;
                                   fisEx.fis?.value.CARIADI =

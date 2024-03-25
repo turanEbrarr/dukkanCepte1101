@@ -190,8 +190,8 @@ class _tahsilat_cari_pageState extends State<tahsilat_cari_page> {
                                         tahsilatEx.tahsilat!.value.BELGENO =
                                             "123456";
                                         tahsilatEx.tahsilat!.value.SUBEID =
-                                            int.parse(
-                                                Ctanim.kullanici!.YERELSUBEID!);
+                                            
+                                                Ctanim.kullanici!.YERELSUBEID;
                                         tahsilatEx.tahsilat!.value.PLASIYERKOD =
                                             Ctanim.kullanici!.KOD;
                                         tahsilatEx.tahsilat?.value.CARIKOD =

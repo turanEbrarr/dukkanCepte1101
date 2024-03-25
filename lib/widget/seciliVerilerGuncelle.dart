@@ -34,20 +34,16 @@ class _seciliVerilerWidgetState extends State<seciliVerilerWidget> {
 
     "Kur", // 8
     
-    "Plasiyer Banka", // 10
-    "Plasiyer Banka Sözleşme", // 11
+
 
     "Plasiyer Yetkileri \n(Yeniden başlatma gerekir.)", // 14
 
-    "Noktadan Sonra Haneler", // 16
+
     "Şube Depo Bilgileri", // 17
     "Stok Depo Bakiyeler", // 18
 
   ];
   List<bool> checkBoxValue = [
-    false,
-    false,
-    false,
     false,
     false,
     false,
@@ -77,63 +73,39 @@ class _seciliVerilerWidgetState extends State<seciliVerilerWidget> {
     List<String?> hatalar = [];
        if(checkBoxValue[17] == true){
       hatalar.add(await bs.getirSubeDepo(
-          sirket: Ctanim.sirket!));
+         ));
       completedOperations++;
       updateProgress(completedOperations / totalOperations);
     }
-           if(checkBoxValue[19] == true){
-      hatalar.add(await bs.getirFisEkParam(
-          sirket: Ctanim.sirket!));
-      completedOperations++;
-      updateProgress(completedOperations / totalOperations);
-    }
+  
     if(checkBoxValue[14] == true){
-      hatalar.add(await bs.getKullanicilar(kullaniciKodu: Ctanim.kullanici!.KOD!, sirket: Ctanim.sirket!, IP: Ctanim.IP));
-      hatalar.add(await bs.getirPlasiyerYetki(
-          sirket: Ctanim.sirket!, kullaniciKodu: Ctanim.kullanici!.KOD!,IP: Ctanim.IP));
+      hatalar.add(await bs.getKullanicilar(kullaniciKodu: Ctanim.kullanici!.KOD!,));
+      hatalar.add(await bs.getirPlasiyerYetki());
       completedOperations++;
       updateProgress(completedOperations / totalOperations);
     }
-        if(checkBoxValue[16] == true){
-         hatalar.add(await bs.getirOndalikParam(subeId: int.parse(Ctanim.kullanici!.YERELSUBEID!), sirket: Ctanim.sirket!));
-      completedOperations++;
-      updateProgress(completedOperations / totalOperations);
-    }
+      
 
-    if (checkBoxValue[2] == true) {
-      hatalar.add(await bs.getirRaf(sirket: Ctanim.sirket!));
-      completedOperations++;
-      updateProgress(completedOperations / totalOperations);
-    }
+    
     if (checkBoxValue[3] == true) {
-      hatalar.add(await bs.getirOlcuBirim(sirket: Ctanim.sirket!));
+      hatalar.add(await bs.getirOlcuBirim());
       completedOperations++;
       updateProgress(completedOperations / totalOperations);
     }
     if (checkBoxValue[4] == true) {
-      hatalar.add(await bs.getirSubeDepo(sirket: Ctanim.sirket!));
+      hatalar.add(await bs.getirSubeDepo());
       completedOperations++;
       updateProgress(completedOperations / totalOperations);
     }
 
     if (checkBoxValue[8] == true) {
-      hatalar.add(await bs.getirKur(sirket: Ctanim.sirket!));
+      hatalar.add(await bs.getirKur());
       completedOperations++;
       updateProgress(completedOperations / totalOperations);
     }
  
-    if (checkBoxValue[10] == true) {
-      hatalar.add(await bs.getirPlasiyerBanka(
-          sirket: Ctanim.sirket!, kullaniciKodu: Ctanim.kullanici!.KOD!));
-      completedOperations++;
-      updateProgress(completedOperations / totalOperations);
-    }
-    if (checkBoxValue[11] == true) {
-      hatalar.add(await bs.getirPlasiyerBankaSozlesme(
-          sirket: Ctanim.sirket!, kullaniciKodu: Ctanim.kullanici!.KOD!));
-      completedOperations++;
-      updateProgress(completedOperations / totalOperations);
-    }
+
+ 
 
     if (checkBoxValue[0] == true) {
       hatalar.add(await stokKartEx.servisStokGetir());

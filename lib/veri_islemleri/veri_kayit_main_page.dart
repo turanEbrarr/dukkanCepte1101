@@ -327,7 +327,7 @@ class _veri_kayit_main_pageState extends State<veri_kayit_main_page> {
                   "\n" +
                   baslik[i][0] +
                   " Belge Tipine ait " +
-                  fisEx.list_fis_gidecek[j].FATURANO.toString() +
+                  fisEx.list_fis_gidecek[j].BELGENO.toString() +
                   " fatura numaralı belge gönderilemedi.\n Hata Mesajı :" +
                   gelenHata.HataMesaj!;
 
@@ -346,7 +346,7 @@ class _veri_kayit_main_pageState extends State<veri_kayit_main_page> {
                   "\n" +
                   baslik[i][0] +
                   " Belge Tipine ait " +
-                  fisEx.list_fis_gidecek[j].FATURANO.toString() +
+                  fisEx.list_fis_gidecek[j].BELGENO.toString() +
                   " fatura numaralı belge gönderilemedi.\n Hata Mesajı : Zorunlu Ek Parametreler Boş";
           }
 

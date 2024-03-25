@@ -50,11 +50,11 @@ class _sayim_kayit_depo_secimiState extends State<sayim_kayit_depo_secimi> {
     // TODO: implement initState
     super.initState();
     for (int i = 0; i < listeler.listSubeDepoModel.length; i++) {
-           if(int.parse(Ctanim.kullanici!.YERELDEPOID!)==listeler.listSubeDepoModel[i].DEPOID){
+           if(Ctanim.kullanici!.YERELDEPOID==listeler.listSubeDepoModel[i].DEPOID){
         selectedNereye=listeler.listSubeDepoModel[i].DEPOADI;
         selectedNereyeID=listeler.listSubeDepoModel[i].DEPOID;
       }
-      if(int.parse(Ctanim.kullanici!.YERELSUBEID!)==listeler.listSubeDepoModel[i].SUBEID){
+      if(Ctanim.kullanici!.YERELSUBEID==listeler.listSubeDepoModel[i].SUBEID){
         selectedNereden=listeler.listSubeDepoModel[i].SUBEADI;
         selectedNeredenID=listeler.listSubeDepoModel[i].SUBEID;
 

@@ -224,15 +224,12 @@ class _settings_pageState extends State<settings_page> {
                                                         },
                                                       );
 
-                                                      String kullanici = await bs
-                                                          .kullaniciSayisiSorgula(
-                                                              LisansNo:
-                                                                  lisans.text);
-                                                      if (kullanici == "OK") {
+                                                 
+                                                    
                                                         await SharedPrefsHelper
                                                             .IpSil();
                                                         donenAPIler = await bs
-                                                            .makeSoapRequest(
+                                                            .lisansSorgula(
                                                                 lisans.text);
 
                                                         Navigator.pop(context);
@@ -265,18 +262,7 @@ class _settings_pageState extends State<settings_page> {
                                                                     "İp Bilgisi Alınamadı.",
                                                                   ));
                                                         }
-                                                      } else {
-                                                        print("KULAŞ");
-                                                        Future.delayed(
-                                                            Duration.zero,
-                                                            () =>
-                                                                showAlertDialogSettings1(
-                                                                  context,
-                                                                  ikinciGeri:
-                                                                      true,
-                                                                  "Kullanıcı sayısı aşılmış. Mesaj: $kullanici",
-                                                                ));
-                                                      }
+                                                   
                                                     }
                                                     Navigator.pop(context);
                                                   },
@@ -581,26 +567,16 @@ class _settings_pageState extends State<settings_page> {
                                                     if (donenAPIler[0] != "") {
                                                       sirketKullaniciDoluMu =
                                                           await bs.getKullanicilar(
-                                                              IP: donenAPIler[
-                                                                  0],
                                                               kullaniciKodu:
                                                                   kullaniciCont
                                                                       .text,
-                                                              sirket:
-                                                                  sirket.text);
+                                                             );
 
                                                       if (sirketKullaniciDoluMu ==
                                                           "") {
                                                         print("o dan aldım");
                                                         await bs
-                                                            .getirPlasiyerYetki(
-                                                                sirket:
-                                                                    sirket.text,
-                                                                kullaniciKodu:
-                                                                    kullaniciCont
-                                                                        .text,
-                                                                IP: donenAPIler[
-                                                                    0]);
+                                                            .getirPlasiyerYetki();
                                                         await SharedPrefsHelper
                                                             .saveList([]);
 
@@ -677,26 +653,17 @@ class _settings_pageState extends State<settings_page> {
                                                     if (donenAPIler[1] != "") {
                                                       sirketKullaniciDoluMu =
                                                           await bs.getKullanicilar(
-                                                              IP: donenAPIler[
-                                                                  1],
+                                                             
                                                               kullaniciKodu:
                                                                   kullaniciCont
                                                                       .text,
-                                                              sirket:
-                                                                  sirket.text);
+                                                              );
 
                                                       if (sirketKullaniciDoluMu ==
                                                           "") {
                                                         print("1 dan aldım");
                                                         await bs
-                                                            .getirPlasiyerYetki(
-                                                                sirket:
-                                                                    sirket.text,
-                                                                kullaniciKodu:
-                                                                    kullaniciCont
-                                                                        .text,
-                                                                IP: donenAPIler[
-                                                                    1]);
+                                                            .getirPlasiyerYetki();
                                                         await SharedPrefsHelper
                                                             .saveList([]);
 

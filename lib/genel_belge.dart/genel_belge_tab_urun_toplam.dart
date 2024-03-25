@@ -363,72 +363,7 @@ class _genel_belge_tab_urun_toplamState
       Ctanim.genelToplamHesapla(fisEx);
     }
 
-    if (widget.belgeTipi == "Alinan_Siparis" ||
-        widget.belgeTipi == "Musteri_Siparis") {
-      if (Ctanim.kullanici!.SIPKDV == "E") {
-        KDVDAHIL = true;
-        Ctanim.KDVDahilMiDinamik = KDVDAHIL;
-      } else {
-        KDVDAHIL = false;
-        Ctanim.KDVDahilMiDinamik = KDVDAHIL;
-      }
-    }
-    if (widget.belgeTipi == "Satis_Teklif") {
-      if (Ctanim.kullanici!.SATISTEKLIFKDV == "E") {
-        KDVDAHIL = true;
-        Ctanim.KDVDahilMiDinamik = KDVDAHIL;
-      } else {
-        KDVDAHIL = false;
-        Ctanim.KDVDahilMiDinamik = KDVDAHIL;
-      }
-    }
-    if (widget.belgeTipi == "Perakende_Satis") {
-      if (Ctanim.kullanici!.PERSATKDV == "E") {
-        KDVDAHIL = true;
-        Ctanim.KDVDahilMiDinamik = KDVDAHIL;
-      } else {
-        KDVDAHIL = false;
-        Ctanim.KDVDahilMiDinamik = KDVDAHIL;
-      }
-    }
-    if (widget.belgeTipi == "Satis_Fatura") {
-      if (Ctanim.kullanici!.FATKDV == "E") {
-        KDVDAHIL = true;
-        Ctanim.KDVDahilMiDinamik = KDVDAHIL;
-      } else {
-        KDVDAHIL = false;
-        Ctanim.KDVDahilMiDinamik = KDVDAHIL;
-      }
-    }
-    if (widget.belgeTipi == "Satis_Irsaliye") {
-      if (Ctanim.kullanici!.SATIRSKDV == "E") {
-        KDVDAHIL = true;
-        Ctanim.KDVDahilMiDinamik = KDVDAHIL;
-      } else {
-        KDVDAHIL = false;
-        Ctanim.KDVDahilMiDinamik = KDVDAHIL;
-      }
-    }
-    if (widget.belgeTipi == "Alis_Irsaliye") {
-      if (Ctanim.kullanici!.ALIRSKDV == "E") {
-        KDVDAHIL = true;
-        Ctanim.KDVDahilMiDinamik = KDVDAHIL;
-      } else {
-        KDVDAHIL = false;
-        Ctanim.KDVDahilMiDinamik = KDVDAHIL;
-      }
-    }
-    if (widget.belgeTipi == "Alis_Fatura" ||
-        widget.belgeTipi == "Alis_Iade_Fatura") {
-      // zekeriya abi bakacak buraya
-      if (Ctanim.kullanici!.ALIRSKDV == "E") {
-        KDVDAHIL = true;
-        Ctanim.KDVDahilMiDinamik = KDVDAHIL;
-      } else {
-        KDVDAHIL = false;
-        Ctanim.KDVDahilMiDinamik = KDVDAHIL;
-      }
-    }
+  
     if (Ctanim.KDVDahilMiDinamik == true) {
       KDVDahil = Colors.green;
     } else {
@@ -883,8 +818,7 @@ class _genel_belge_tab_urun_toplamState
                     borderRadius:
                         BorderRadius.circular(5), // Köşe yarıçapını ayarlayın
                   ),
-                  child: Ctanim.kullanici!.GISK1 == "E"
-                      ? TextFormField(
+                  child:  TextFormField(
                           controller: genelIskonto1Controller,
                           onTap: () {
                             setState(() {
@@ -920,7 +854,7 @@ class _genel_belge_tab_urun_toplamState
                               ),
                               border: InputBorder.none),
                         )
-                      : Container()),
+                     ),
             ),
             Divider(
               thickness: 1,
@@ -937,8 +871,8 @@ class _genel_belge_tab_urun_toplamState
                     borderRadius:
                         BorderRadius.circular(5), // Köşe yarıçapını ayarlayın
                   ),
-                  child: Ctanim.kullanici!.GISK2 == "E"
-                      ? TextFormField(
+                  child: 
+                   TextFormField(
                           controller: genelIskonto2Controller,
                           onTap: () {
                             setState(() {
@@ -974,7 +908,7 @@ class _genel_belge_tab_urun_toplamState
                               ),
                               border: InputBorder.none),
                         )
-                      : Container()),
+                      ),
             ),
             Divider(
               thickness: 1,
@@ -1526,94 +1460,14 @@ class _genel_belge_tab_urun_toplamState
         onPressed: () async {
           if (fisEx.fis!.value.fisStokListesi.length != 0) {
             Fis fiss = fisEx.fis!.value;
-            if (widget.belgeTipi == "Satis_Fatura") {
-              if (seciliFaturaTip!.ID == 1) {
-                // acik islem tipi seçili
-                fisEx.fis!.value.EFATURAMI = "H";
-                fisEx.fis!.value.EARSIVMI = "H";
-                fisEx.fis!.value.SERINO =
-                    Ctanim.kullanici!.FATURAACIKSERI_SERINO!;
-                fisEx.fis!.value.BELGENO = Ctanim.acikFaturaNumrasi.toString();
-                fisEx.fis!.value.FATURANO = Ctanim.acikFaturaNumrasi.toString();
-                Ctanim.acikFaturaNumrasi = Ctanim.acikFaturaNumrasi + 1;
-                await SharedPrefsHelper.acikFaturaNumarasiKaydet(
-                    Ctanim.acikFaturaNumrasi);
-              } else {
-                if (Ctanim.kullanici!.EFATURA == "E") {
-                  if (true) { // burada e fatura mı kontrolu vardı
-                    fisEx.fis!.value.EFATURAMI = "E";
-                    fisEx.fis!.value.EARSIVMI = "H";
-                    fisEx.fis!.value.SERINO = Ctanim.kullanici!.EFATURASERINO!;
-                    fisEx.fis!.value.BELGENO =
-                        Ctanim.eFaturaNumarasi.toString();
-                    fisEx.fis!.value.FATURANO =
-                        Ctanim.eFaturaNumarasi.toString();
-                    Ctanim.eFaturaNumarasi = Ctanim.eFaturaNumarasi + 1;
-                    await SharedPrefsHelper.efaturaNumarasiKaydet(
-                        Ctanim.eFaturaNumarasi);
-                  } else {
-                    fisEx.fis!.value.EFATURAMI = "H";
-                    fisEx.fis!.value.EARSIVMI = "E";
-                    fisEx.fis!.value.SERINO = Ctanim.kullanici!.EARSIVSERINO!;
-                    fisEx.fis!.value.BELGENO = Ctanim.eArsivNumarasi.toString();
-                    // cari efatura değil
-                    fisEx.fis!.value.FATURANO =
-                        Ctanim.eArsivNumarasi.toString();
-                    Ctanim.eArsivNumarasi = Ctanim.eArsivNumarasi + 1;
-                    await SharedPrefsHelper.eArsivNumarasiKaydet(
-                        Ctanim.eArsivNumarasi);
-                  }
-                } else {
-                  // kullanıcı eftura değil
-                  fisEx.fis!.value.EFATURAMI = "H";
-                  fisEx.fis!.value.EARSIVMI = "H";
-                  fisEx.fis!.value.SERINO = Ctanim.kullanici!.FATURASERISERINO!;
-                  fisEx.fis!.value.BELGENO = Ctanim.faturaNumarasi.toString();
-                  fisEx.fis!.value.FATURANO = Ctanim.faturaNumarasi.toString();
-                  Ctanim.faturaNumarasi = Ctanim.faturaNumarasi + 1;
-                  await SharedPrefsHelper.faturaNumarasiKaydet(
-                      Ctanim.faturaNumarasi);
-                }
-              }
-            } else if (widget.belgeTipi == "Satis_Irsaliye") {
-              if (Ctanim.kullanici!.EIRSALIYE == "E") {
-                fisEx.fis!.value.BELGENO = Ctanim.eirsaliyeNumarasi.toString();
-                fisEx.fis!.value.SERINO = Ctanim.kullanici!.EIRSALIYESERINO!;
-                fisEx.fis!.value.FATURANO = Ctanim.eirsaliyeNumarasi.toString();
-                Ctanim.eirsaliyeNumarasi = Ctanim.eirsaliyeNumarasi + 1;
-                await SharedPrefsHelper.eirsaliyeNumarasiKaydet(
-                    Ctanim.eirsaliyeNumarasi);
-              } else {
-                // kullanıcı eftura değil
-                fisEx.fis!.value.SERINO = Ctanim.kullanici!.IRSALIYESERISERINO!;
-                fisEx.fis!.value.BELGENO = Ctanim.irsaliyeNumarasi.toString();
-                fisEx.fis!.value.FATURANO = Ctanim.irsaliyeNumarasi.toString();
-                Ctanim.irsaliyeNumarasi = Ctanim.irsaliyeNumarasi + 1;
-                await SharedPrefsHelper.faturaNumarasiKaydet(
-                    Ctanim.irsaliyeNumarasi);
-              }
-            } else if (widget.belgeTipi == "Musteri_Siparis") {
-              fisEx.fis!.value.FATURANO = Ctanim.siparisNumarasi.toString();
-              fisEx.fis!.value.BELGENO = Ctanim.siparisNumarasi.toString();
-              Ctanim.siparisNumarasi = Ctanim.siparisNumarasi + 1;
-              await SharedPrefsHelper.siparisNumarasiKaydet(
-                  Ctanim.siparisNumarasi);
-            } else if (widget.belgeTipi == "Perakende_Satis") {
-              fisEx.fis!.value.FATURANO =
-                  Ctanim.perakendeSatisNumarasi.toString();
-              fisEx.fis!.value.BELGENO =
-                  Ctanim.perakendeSatisNumarasi.toString();
-              Ctanim.perakendeSatisNumarasi = Ctanim.perakendeSatisNumarasi + 1;
-              await SharedPrefsHelper.perakendeSatisNumKaydet(
-                  Ctanim.perakendeSatisNumarasi);
-            }
+         
 
-            if (Ctanim.kullanici!.ISLEMAKTARILSIN == "H") {
+            if (Ctanim.kullanici!.ISLEMAKTARILSIN == "E") {
               fisEx.fis!.value.DURUM = true;
               final now = DateTime.now();
               final formatter = DateFormat('HH:mm');
               String saat = formatter.format(now);
-              fisEx.fis!.value.SAAT = saat;
+             
               if (localBelgeTipi.isEmpty) {
                 await Fis.empty().fisEkle(
                     fis: fisEx.fis!.value, belgeTipi: widget.belgeTipi);
@@ -1654,7 +1508,7 @@ class _genel_belge_tab_urun_toplamState
               final now = DateTime.now();
               final formatter = DateFormat('HH:mm');
               String saat = formatter.format(now);
-              fisEx.fis!.value.SAAT = saat;
+          
               fisEx.fis!.value.DURUM = true;
               fisEx.fis!.value.AKTARILDIMI = true;
               String varsaYeniBelgeTuru = "";
@@ -1687,7 +1541,7 @@ class _genel_belge_tab_urun_toplamState
                 await fisEx.listGidecekTekFisGetir(
                     belgeTip: varsaYeniBelgeTuru, fisID: tempID);
 
-                Map<String, dynamic> jsonListesi =
+               Map<String, dynamic> jsonListesi =
                     fisEx.list_fis_gidecek[0].toJson2();
 
                 setState(() {});

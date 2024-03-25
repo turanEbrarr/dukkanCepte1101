@@ -682,7 +682,7 @@ class VeriIslemleri {
     List<Cari>? temp2 = await cariGetir();
     List<SubeDepoModel>? temp3 = await subeDepoGetir();
     */
-    if (listeler.liststok.length > 0 || listeler.listCari.length> 0 || listeler.listSubeDepoModel!.length > 0) {
+    if (listeler.liststok.length > 0 || listeler.listCari.length> 0 ) {
       return 1;
     } else {
       return 0;

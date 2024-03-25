@@ -57,9 +57,7 @@ class _depo_transfer_depo_secimiState extends State<depo_transfer_depo_secimi> {
       if (!subeler
               .map((sube) => sube.SUBEADI ?? "")
               .toList()
-              .contains(listeler.listSubeDepoModel[i].SUBEADI) &&
-          listeler.listSubeDepoModel[i].SUBEID ==
-              int.parse(Ctanim.kullanici!.YERELSUBEID.toString())) {
+              .contains(listeler.listSubeDepoModel[i].SUBEADI) ) {
         subeler.add(listeler.listSubeDepoModel[i]);
       }
       selectedNeredenSube = subeler.first.SUBEADI;
@@ -127,10 +125,7 @@ class _depo_transfer_depo_secimiState extends State<depo_transfer_depo_secimi> {
                     if (!nereyeDepolar
                             .map((depo) => depo.DEPOADI ?? "")
                             .toList()
-                            .contains(listeler.listSubeDepoModel[i].DEPOADI) &&
-                        listeler.listSubeDepoModel[i].DEPOID !=
-                            int.parse(
-                                Ctanim.kullanici!.YERELDEPOID.toString())) {
+                            .contains(listeler.listSubeDepoModel[i].DEPOADI) ) {
                       nereyeDepolar.add(listeler.listSubeDepoModel[i]);
                     }
                   }
@@ -208,11 +203,11 @@ class _depo_transfer_depo_secimiState extends State<depo_transfer_depo_secimi> {
                       fisEx.fis!.value.DOVIZ = dovizAdi;
                       fisEx.fis!.value.KUR = dovizKur;
                       fisEx.fis!.value.ONAY = "E";
-                      fisEx.fis!.value.FATURANO = "";
+                      
                       fisEx.fis!.value.DEPOID = int.parse(selectedNeredenDepoID
                           .toString()); // ana depo // nereden alko
                       fisEx.fis!.value.SUBEID =
-                          int.parse(Ctanim.kullanici!.YERELSUBEID!);
+                       1;
                       Get.to(() => depo_transfer_tab_page(
                             belgeTipi: 'Depo_Transfer',
                             fis_id: fisEx.fis!.value.ID!,

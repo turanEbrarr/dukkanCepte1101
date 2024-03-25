@@ -57,7 +57,7 @@ class StokKartController extends GetxController {
     if (CariKod != '') {
    
 
-        if (Ctanim.kullanici!.SATISTIPI == "0") {
+        if (true) {
           StokKart ff = searchList.where((p0) => p0.KOD == Stok.KOD).first;
 
           if (Fiyattip == 'Fiyat1') {
@@ -89,31 +89,8 @@ class StokKartController extends GetxController {
             kosulYoksaTekrarDonecek == 0.0;
             return [0.0, ff.SATISISK, Fiyattip, true];
           }
-        } else if (Ctanim.kullanici!.SATISTIPI == "1") {
-
-        } else if (Ctanim.kullanici!.SATISTIPI == "2") {
-          double sonFiyat = 0.0;
-      
-
-          return [sonFiyat, 0,0, false];
-        } else if (Ctanim.kullanici!.SATISTIPI == "3") {
+        } 
        
-        }
-        if (kosuldanDonenFiyat == 0) {
-          if (Fiyattip == "Fiyat1") {
-            return [Stok.SFIYAT1, Stok.SATISISK, _FiyatTip, true];
-          } else if (Fiyattip == "Fiyat2") {
-            return [Stok.SFIYAT2, Stok.SATISISK, _FiyatTip, true];
-          } else if (Fiyattip == "Fiyat3") {
-            return [Stok.SFIYAT3, Stok.SATISISK, _FiyatTip, true];
-          } else if (Fiyattip == "Fiyat4") {
-            return [Stok.SFIYAT4, Stok.SATISISK, _FiyatTip, true];
-          } else if (Fiyattip == "Fiyat5") {
-            return [Stok.SFIYAT5, Stok.SATISISK, _FiyatTip, true];
-          }
-        }
-      
-      return [];
     }
     return [];
   }

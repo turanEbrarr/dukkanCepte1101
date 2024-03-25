@@ -305,7 +305,7 @@ class _odeme_nakit_visaState extends State<odeme_nakit_visa> {
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .6,
                                 child: Text(
-                                  Ctanim.kullanici!.KASAADI!,
+                                  "MERKEZ-TL-KASA",
                                   style: TextStyle(fontSize: 14),
                                 )
 

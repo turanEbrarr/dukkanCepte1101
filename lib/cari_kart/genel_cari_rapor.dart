@@ -312,13 +312,7 @@ class _genel_cari_raporState extends State<genel_cari_rapor> {
                                     },
                                   );
 
-                                  List<List<dynamic>> gelen =
-                                      await bs.getirCariCekSenet(
-                                    sirket: Ctanim.sirket!,
-                                    cariKodu: widget.cariKart!.KOD!,
-                                    basTar: basTar,
-                                    bitTar: bitTar,
-                                  );
+                              List<List<dynamic>> gelen = [["a"], []];
 
                                   if (gelen[0].length == 1 &&
                                       gelen[1].length == 0) {

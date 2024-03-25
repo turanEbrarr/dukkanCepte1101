@@ -135,123 +135,36 @@ class _LoginPageState extends State<LoginPage> {
         String islemTipiHata = "";
         if (_passwordController.text == Ctanim.kullanici?.SIFRE &&
             _userNameController.text == Ctanim.kullanici!.KOD) {
-          int value = await SharedPrefsHelper.faturaNumarasiGetir();
-          if (value != -1) {
-            Ctanim.faturaNumarasi = value;
-          } else {
-            if (Ctanim.kullanici!.FATNO == "0" &&
-                Ctanim.kullanici!.FATURASERISERINO != "") {
-              paremetreHatasiVarMi = true;
-              print("fatNO");
-            } else {
-              Ctanim.faturaNumarasi =
-                  int.parse(Ctanim.kullanici!.FATNO.toString());
-              SharedPrefsHelper.faturaNumarasiKaydet(
-                  int.parse(Ctanim.kullanici!.FATNO.toString()));
-            }
-          }
-          int value1 = await SharedPrefsHelper.siparisNumarasiGetir();
-          if (value1 != -1) {
-            Ctanim.siparisNumarasi = value1;
-          } else {
-            Ctanim.siparisNumarasi = 1;
-            SharedPrefsHelper.siparisNumarasiKaydet(Ctanim.siparisNumarasi);
-          }
-          int value2 = await SharedPrefsHelper.irsaliyeNumarasiGetir();
-          if (value2 != -1) {
-            Ctanim.irsaliyeNumarasi = value2;
-          } else {
-            if (Ctanim.kullanici!.IRSNO == "0" &&
-                Ctanim.kullanici!.IRSALIYESERISERINO != "") {
-              paremetreHatasiVarMi = true;
-              print("ırsNO");
-            } else {
-              Ctanim.irsaliyeNumarasi =
-                  int.parse(Ctanim.kullanici!.IRSNO.toString());
-              SharedPrefsHelper.irsaliyeNumarasiKaydet(
-                  int.parse(Ctanim.kullanici!.IRSNO.toString()));
-            }
-          }
-          int value3 = await SharedPrefsHelper.eirsaliyeNumarasiGetir();
-          if (value3 != -1) {
-            Ctanim.eirsaliyeNumarasi = value3;
-          } else {
-            if (Ctanim.kullanici!.EIRSNO == "0" &&
-                Ctanim.kullanici!.EIRSALIYESERINO != "" &&
-                Ctanim.kullanici!.EIRSALIYE == "E") {
-              paremetreHatasiVarMi = true;
-              print("EirsNO");
-            } else {
-              Ctanim.eirsaliyeNumarasi =
-                  int.parse(Ctanim.kullanici!.EIRSNO.toString());
-              SharedPrefsHelper.eirsaliyeNumarasiKaydet(
-                  int.parse(Ctanim.kullanici!.EIRSNO.toString()));
-            }
-          }
-          int value4 = await SharedPrefsHelper.perakendeSatisNumGetir();
-          if (value4 != -1) {
-            Ctanim.perakendeSatisNumarasi = value4;
-          } else {
-            Ctanim.perakendeSatisNumarasi = 1;
-            SharedPrefsHelper.perakendeSatisNumKaydet(
-                Ctanim.perakendeSatisNumarasi);
-          }
-          int value5 = await SharedPrefsHelper.depoTransferNumGetir();
-          if (value5 != -1) {
-            Ctanim.depolarArasiTransfer = value5;
-          } else {
-            Ctanim.depolarArasiTransfer = 1;
-            SharedPrefsHelper.depoTransferNumKaydet(
-                Ctanim.depolarArasiTransfer);
-          }
-          int value6 = await SharedPrefsHelper.efaturaNumarasiGetir();
-          if (value6 != -1) {
-            Ctanim.eFaturaNumarasi = value6;
-          } else {
-            if (Ctanim.kullanici!.EFATNO == "0" &&
-                Ctanim.kullanici!.EFATURASERINO != "" &&
-                Ctanim.kullanici!.EFATURA == "E") {
-              paremetreHatasiVarMi = true;
-              print("EfatNO");
-            } else {
-              Ctanim.eFaturaNumarasi =
-                  int.parse(Ctanim.kullanici!.EFATNO.toString());
-              SharedPrefsHelper.efaturaNumarasiKaydet(
-                  int.parse(Ctanim.kullanici!.EFATNO.toString()));
-            }
-          }
-          int value7 = await SharedPrefsHelper.eArsivNumarasiGetir();
-          if (value7 != -1) {
-            Ctanim.eArsivNumarasi = value7;
-          } else {
-            if (Ctanim.kullanici!.EARSIVNO == "0" &&
-                Ctanim.kullanici!.EARSIVSERINO != "" &&
-                Ctanim.kullanici!.EARSIV == "E") {
-              paremetreHatasiVarMi = true;
-              print("EarsivNO");
-            } else {
-              Ctanim.eArsivNumarasi =
-                  int.parse(Ctanim.kullanici!.EARSIVNO.toString());
-              SharedPrefsHelper.eArsivNumarasiKaydet(
-                  int.parse(Ctanim.kullanici!.EARSIVNO.toString()));
-            }
-          }
-          int value8 = await SharedPrefsHelper.acikFaturaNumarasiGetir();
-          if (value8 != -1) {
-            Ctanim.acikFaturaNumrasi = value8;
-          } else {
-            if (Ctanim.kullanici!.FATACIKNO == "0" &&
-                Ctanim.kullanici!.FATURAACIKSERI_SERINO != ""
-                ) {
-              paremetreHatasiVarMi = true;
-              print("acikFatura");
-            } else {
-              Ctanim.acikFaturaNumrasi =
-                  int.parse(Ctanim.kullanici!.FATACIKNO.toString());
-              SharedPrefsHelper.acikFaturaNumarasiKaydet(
-                  int.parse(Ctanim.kullanici!.FATACIKNO.toString()));
-            }
-          }
+       
+            Ctanim.faturaNumarasi = 123;
+     
+            Ctanim.siparisNumarasi = 123;
+ 
+            Ctanim.irsaliyeNumarasi = 123;
+          
+     
+
+            Ctanim.eirsaliyeNumarasi = 123;
+          
+
+   
+            Ctanim.perakendeSatisNumarasi = 123;
+        
+    
+       
+            Ctanim.depolarArasiTransfer = 123;
+        
+
+     
+            Ctanim.eFaturaNumarasi = 123;
+         
+    
+
+            Ctanim.eArsivNumarasi = 123;
+
+   
+            Ctanim.acikFaturaNumrasi = 123;
+       
 
           if (_beniHatirla == true) {
             _savePassword();
@@ -274,12 +187,7 @@ class _LoginPageState extends State<LoginPage> {
             Ctanim.satisFiyatListesi.add("Fiyat5");
           }
 
-          if (Ctanim.kullanici!.GISK1 == "E") {
-            Ctanim.genelIskontoListesi.add("GISK1");
-          }
-          if (Ctanim.kullanici!.GISK2 == "E") {
-            Ctanim.genelIskontoListesi.add("GISK2");
-          }
+      
           //GISK2 den sonrası alınmadı.
 
           showDialog(
@@ -349,6 +257,10 @@ class _LoginPageState extends State<LoginPage> {
                 
                 hatalar.add(await stokKartEx.servisStokGetir());
                 hatalar.add(await cariEx.servisCariGetir());
+                hatalar.add(await bs.getirSubeDepo());
+                hatalar.add(await bs.getirOlcuBirim());
+                hatalar.add(await bs.getirKur());
+
              
                 if (hatalar.length > 0) {
                   for (var element in hatalar) {
@@ -385,7 +297,7 @@ class _LoginPageState extends State<LoginPage> {
                 }
               }
             } else {
-              if (Ctanim.kullanici!.ONLINE == "H") {
+             
                 if (paremetreHatasiVarMi == true) {
                   hataGoster();
                 } else {
@@ -395,9 +307,7 @@ class _LoginPageState extends State<LoginPage> {
                     (route) => false,
                   );
                 }
-              } else {
-                showAlertDialogLogin(context, "Kullanıcının Ofline Giriş İzni Yok");
-              }
+           
             }
           });
 
