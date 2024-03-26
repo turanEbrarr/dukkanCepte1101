@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+// turan
 
 import 'dart:math';
 //import 'dart:js_util'; //??????
@@ -61,7 +62,7 @@ class BaseService {
   }
 
   Future<List<String>> lisansSorgula(String lisansNumarasi) async {
-    var url = Uri.parse('http://192.168.1.111:8187/WebService1.asmx');
+    var url = Uri.parse('http://94.54.108.179:8187/WebService1.asmx');
     var headers = {
       'Content-Type': 'text/xml; charset=utf-8',
       'SOAPAction': 'http://tempuri.org/LisansSorgula'
@@ -114,7 +115,7 @@ class BaseService {
     required String kullaniciKodu,
   }) async {
     var url = Uri.parse(
-        "http://192.168.1.111:8187/WebService1.asmx"); // dış ve iç denecek;
+        "http://94.54.108.179:8187/WebService1.asmx"); // dış ve iç denecek;
     var headers = {
       'Content-Type': 'text/xml; charset=utf-8',
       'SOAPAction': 'http://tempuri.org/KullaniciGetir'
@@ -163,7 +164,7 @@ class BaseService {
 
   Future<String> getirPlasiyerYetki() async {
     var url = Uri.parse(
-        "http://192.168.1.111:8187/WebService1.asmx"); // dış ve iç denecek;
+        "http://94.54.108.179:8187/WebService1.asmx"); // dış ve iç denecek;
     var headers = {
       'Content-Type': 'text/xml; charset=utf-8',
       'SOAPAction': 'http://tempuri.org/KullaniciYetkiGetir'
@@ -233,7 +234,7 @@ class BaseService {
 
   Future<String> getirStoklar() async {
     var url = Uri.parse(
-        "http://192.168.1.111:8187/WebService1.asmx"); // dış ve iç denecek;
+        "http://94.54.108.179:8187/WebService1.asmx"); // dış ve iç denecek;
     var headers = {
       'Content-Type': 'text/xml; charset=utf-8',
       'SOAPAction': 'http://tempuri.org/StoklariGetir'
@@ -303,7 +304,7 @@ class BaseService {
 
 ////webservisteki carileri getirir
   Future<String> getirCariler() async {
-    var url = Uri.parse("http://192.168.1.111:8187/WebService1.asmx");
+    var url = Uri.parse("http://94.54.108.179:8187/WebService1.asmx");
     var headers = {
       'Content-Type': 'text/xml; charset=utf-8',
       'SOAPAction': 'http://tempuri.org/CarileriGetir'
@@ -368,7 +369,7 @@ class BaseService {
   }
 
   Future<String> getirKur() async {
-    var url = Uri.parse("http://192.168.1.111:8187/WebService1.asmx");
+    var url = Uri.parse("http://94.54.108.179:8187/WebService1.asmx");
     var headers = {
       'Content-Type': 'text/xml; charset=utf-8',
       'SOAPAction': 'http://tempuri.org/KurGetir'
@@ -416,7 +417,7 @@ class BaseService {
   }
   
   Future<String> getirOlcuBirim() async {
-   var url = Uri.parse("http://192.168.1.111:8187/WebService1.asmx");
+   var url = Uri.parse("http://94.54.108.179:8187/WebService1.asmx");
     var headers = {
       'Content-Type': 'text/xml; charset=utf-8',
       'SOAPAction': 'http://tempuri.org/OlcuBirimGetir'
@@ -464,7 +465,7 @@ class BaseService {
   }
 
   Future<String> getirSubeDepo() async {
-    var url = Uri.parse("http://192.168.1.111:8187/WebService1.asmx");// dış ve iç denecek;
+    var url = Uri.parse("http://94.54.108.179:8187/WebService1.asmx");// dış ve iç denecek;
     var headers = {
       'Content-Type': 'text/xml; charset=utf-8',
       'SOAPAction': 'http://tempuri.org/SubeDepoGetir'
@@ -602,7 +603,7 @@ class BaseService {
     SHataModel hata = SHataModel(Hata: "true", HataMesaj: "Veri Gönderilemedi");
 
     var jsonString;
-    var url = Uri.parse("http://192.168.1.111:8187/WebService1.asmx");
+    var url = Uri.parse("http://94.54.108.179:8187/WebService1.asmx");
     print("PARAMETRE GELEN"); 
     printWrapped(jsonDataList.toString());
 
@@ -659,7 +660,7 @@ class BaseService {
     SHataModel hata = SHataModel(Hata: "true", HataMesaj: "Veri Gönderilemedi");
 
     var jsonString;
-    var url = Uri.parse("http://192.168.1.111:8187/WebService1.asmx"); // dış ve iç denecek;
+    var url = Uri.parse("http://94.54.108.179:8187/WebService1.asmx"); // dış ve iç denecek;
 
     jsonString = jsonEncode(jsonDataList);
 
@@ -711,7 +712,7 @@ class BaseService {
     SHataModel hata = SHataModel(Hata: "true", HataMesaj: "Veri Gönderilemedi");
 
     var jsonString;
-    var url = Uri.parse("http://192.168.1.111:8187/WebService1.asmx"); // dış ve iç denecek;
+    var url = Uri.parse("http://94.54.108.179:8187/WebService1.asmx"); // dış ve iç denecek;
 
     jsonString = jsonEncode(jsonDataList);
 
@@ -760,7 +761,7 @@ class BaseService {
     SHataModel hata = SHataModel(Hata: "true", HataMesaj: "Veri Gönderilemedi");
 
     var jsonString;
-    var url = Uri.parse("http://192.168.1.111:8187/WebService1.asmx"); // dış ve iç denecek;
+    var url = Uri.parse("http://94.54.108.179:8187/WebService1.asmx"); // dış ve iç denecek;
 
     jsonString = jsonEncode(jsonDataList);
 
